@@ -1,0 +1,133 @@
+/* pages/addressbook/organization/organizationlist/organizationlist.wxss *//* pages/addressbook/addressbook.wxss */
+.dept-head {
+    display: flex;
+    flex-direction: row;
+    height: 48px;
+    flex-direction: row;
+    background-color: #f2f4f5;
+    width: 100%;
+}
+
+.dept-head-content {
+    padding: 0 10px;
+    display: flex;
+    flex-direction: row;
+    height: 48px;
+    align-items: center;
+}
+
+.dept-head-item{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+}
+
+.dept-head-name {
+    font-size: 28rpx;
+}
+
+.active {
+    color: #1597f2;
+}
+
+.dept-name{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+  }
+   
+  .alphabet-list .section-item .section-item-header{
+    display: flex;
+    align-items: center;
+    font-size: 26rpx;
+    font-family: PingFang SC;
+    background-color: #f2f4f5;  
+    color: #000000;
+    padding: 4rpx 20rpx;
+  }
+   
+  .item-header{
+    display: flex;
+    align-items: center;
+    font-size: 16rpx;
+    font-family: PingFang SC;
+    background-color: #f2f4f5;  
+    color: #666666;
+    padding: 4rpx 20rpx;
+  }
+   
+  .alphabet-list .section-item .section-item-cells {
+    padding-left: 20rpx;
+  }
+  .alphabet-list .section-item .section-item-cells .section-item-cell{
+    font-size: 26rpx;
+      line-height: 1.0;
+      color: #000000;
+    padding: 29rpx 0;
+  }
+   
+  .dept-text{
+    font-size: 26rpx;
+    font-family: PingFang SC;
+    color: #000000;
+    line-height: 54rpx;
+  }
+   
+  .border-bottom {
+    border-bottom: 1rpx solid #dbdbdb;
+  }
+   
+  .userIcon{
+    width: 33px;
+    height: 33px;
+  }
+   
+  .callPhone{
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 50rpx;
+  }
+   
+  .deptName{
+    margin-left: 16rpx;
+    font-size: 20rpx; 
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #000000;
+    line-height: 54px;
+  }
+   
+  .userList{
+    display: flex;
+    flex-direction: column;
+    height: 50rpx;
+  }
+   
+  .cell-name{
+    margin-left: 20rpx;
+    font-size: 28rpx;
+    font-family: PingFang SC;
+    color: #000000;
+  }
+   
+  .flex-wrp-row {
+    display: flex;
+    flex-direction: row;
+  }
+   
+  .item {
+    position: relative;
+  }
+   
+  .item-left {
+     flex: 1; /* 重要 */
+     align-items:center;
+  }
+   
+  .item-right {
+    position: relative;
+    align-items:center;
+  }

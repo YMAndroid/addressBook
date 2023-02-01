@@ -1,0 +1,15 @@
+<!--pages/addressbook/main/main.wxml-->
+<view class="main">
+    <view class="head">
+        <block wx:for="{{headTab}}" wx:for-item="item" wx:for-index="index">
+            <view class="head-item" bindtap="tabClick" data-tabType="{{item.type}}" hover-class='wsui-btn__hover_list'>
+                <image src="{{item.icon}}" class="head-item-image"></image>
+                <text class="head-item-text">{{item.name}}</text>
+            </view>
+        </block>
+    </view>
+
+    <view class="content">
+        <group groupList="{{groupList}}" bindmyevent="myevent"></group>
+    </view>
+</view>

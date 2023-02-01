@@ -1,0 +1,4 @@
+<!--pages/addressbook/group/group.wxml-->
+<view>
+    <group groupList="{{groupList}}"></group>
+</view>

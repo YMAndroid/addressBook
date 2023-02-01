@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "group": "/components/group/group"
+    },
+    "navigationBarTitleText": "通讯录"
+}

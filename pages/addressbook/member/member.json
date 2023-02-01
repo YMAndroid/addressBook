@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "组成员",
+    "usingComponents": {
+        "alphabet-order-list": "/components/alphabet-order-list/alphabet-order-list"
+      }
+}

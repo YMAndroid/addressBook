@@ -1,0 +1,23 @@
+/* pages/addressbook/organization/organization.wxss */
+.main{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgb(250, 248, 248);
+}
+
+.item{
+    margin-top: 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    background-color: white;
+    padding: 0 10px;
+}
+
+.item-image {
+    width: 40rpx;
+    height: 40rpx;
+}

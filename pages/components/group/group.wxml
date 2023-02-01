@@ -1,0 +1,17 @@
+<!--pages/components/group/group.wxml-->
+<view class="group">
+    <block>
+        <view class="group-item">
+            <image class="group-item-image" src="/image/dept.png"></image>
+            <view class="group-item-content">
+                <view class="group-item-content-title">
+                    <text>测试部门-2600</text>
+                </view>
+                <view class="group-item-content-desc">
+                    <text>7人 语音组呼</text>
+                </view>
+            </view>
+            <view>业务</view>
+        </view>
+    </block>
+</view>

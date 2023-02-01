@@ -1,0 +1,8 @@
+<!--pages/addressbook/organization/organization.wxml-->
+<view class="main">
+    <view class="item" bindtap="jumpList">
+        <text>北京某某科技公司</text>
+        <image src="/image/right.png" class="item-image"></image>
+    </view>
+    
+</view>

@@ -1,0 +1,39 @@
+/* pages/addressbook/main/main.wxss */
+.main{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #e9e6e6;
+}
+
+.head {
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    justify-content: space-around;
+    background-color: white;
+    border-bottom: 1px solid #e9e6e6;
+}
+
+.head-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+}
+
+.head-item-image {
+    width: 30px;
+    height: 30px;
+}
+
+.head-item-text{
+    font-size: 24rpx;
+    color: #666666;
+}
+
+.wsui-btn__hover_list {
+    opacity: 0.9;
+    background: #e9e6e6;
+}

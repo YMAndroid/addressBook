@@ -1,0 +1,18 @@
+<!--pages/components/group/group.wxml-->
+<scroll-view class="group" scroll-y="true">
+    <block wx:for="{{groupList}}" wx:for-item="item" wx:for-index="idx" data-index="{{index}}">
+        <view class="group-item " hover-class='wsui-btn__hover_list' >
+            <image class="group-item-image" src="/image/group_icon.png" bindtap="jumpMember" data-groupId="{{item.groupId}}"></image>
+            <view class="group-item-content" bindtap="jumpVoice" data-groupObj="{{item}}" bindlongtap="bindlongtap">
+                <view class="group-item-content-title">
+                    <text>{{item.groupName}}-{{item.groupNo}}</text>
+                </view>
+                <view class="group-item-content-desc">
+                    <text>语音组呼</text>
+                </view>
+            </view>
+            <view class="group-opt" bindtap="jumpBussiness" data-groupId="{{item.groupId}}">业务</view>
+        </view>
+    </block>
+
+</scroll-view>
