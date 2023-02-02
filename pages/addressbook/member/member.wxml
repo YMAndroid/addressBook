@@ -30,19 +30,13 @@
                 <block wx:if="{{checkType == 'checkbox'}}">
                     <checkbox-group bindchange="checkBoxChange">
                         <label wx:for="{{userListSearch}}" wx:key="userId" class="checkbox">
-                            <view class="weui-cell weui-cell_access weui-search_r" data-item='{{item}}'>
+                            <view class="weui-cell weui-cell_access weui-search_r sercher-item" data-item='{{item}}'>
                                 <checkbox value="{{item.userId}}" checked="{{item.checked}}" />
                                 <view class="weui-cell__hd weui-cell_primary weui-menu__flex">
                                     <image src="{{item.photo}}" alt="{{item.name}}" class="bg_light-grey"></image>
                                 </view>
                                 <view class="weui-cell__bd weui-cell_primary">
                                     <view>{{item.name}}</view>
-                                    <view class="grey">{{item.positionName}}</view>
-                                </view>
-                                <view class="weui-cell__ft">
-                                    <view class="weui-menulist__flex">
-                                        <text style="font-size: 32rpx;line-height: 50rpx;">{{item.mobile}}</text>
-                                    </view>
                                 </view>
                             </view>
                         </label>
@@ -52,19 +46,13 @@
                 <block wx:elif="{{checkType == 'radio'}}">
                     <radio-group bindchange="radioChange">
                         <label wx:for="{{userListSearch}}" wx:key="id" class="checkbox">
-                            <view class="weui-cell weui-cell_access weui-search_r" data-item='{{item}}'>
+                            <view class="weui-cell weui-cell_access weui-search_r sercher-item" data-item='{{item}}'>
                                 <radio value="{{item.id}}" checked="{{item.checked}}" />
                                 <view class="weui-cell__hd weui-cell_primary weui-menu__flex">
                                     <image src="{{item.photo}}" alt="{{item.name}}" class="bg_light-grey"></image>
                                 </view>
                                 <view class="weui-cell__bd weui-cell_primary">
                                     <view>{{item.name}}</view>
-                                    <view class="grey">{{item.positionName}}</view>
-                                </view>
-                                <view class="weui-cell__ft">
-                                    <view class="weui-menulist__flex">
-                                        <text style="font-size: 32rpx;line-height: 50rpx;">{{item.mobile}}</text>
-                                    </view>
                                 </view>
                             </view>
                         </label>
@@ -72,22 +60,15 @@
                 </block>
                 <!--其他check或常规搜索结果-->
                 <block wx:else>
-                    <view wx:for="{{userListSearch}}" wx:key="id" class="weui-cell weui-cell_access weui-search_r" data-item='{{item}}' bindtap="itemClickEvent">
+                    <view wx:for="{{userListSearch}}" wx:key="id" class="weui-cell weui-cell_access weui-search_r sercher-item" data-item='{{item}}' bindtap="itemClickEvent" >
                         <view class="weui-cell__hd weui-cell_primary weui-menu__flex">
                             <image src="{{item.photo}}" alt="{{item.name}}" class="bg_light-grey"></image>
                         </view>
                         <view class="weui-cell__bd weui-cell_primary">
                             <view>{{item.name}}</view>
-                            <view class="grey">{{item.positionName}}</view>
-                        </view>
-                        <view class="weui-cell__ft">
-                            <view class="weui-menulist__flex">
-                                <text style="font-size: 32rpx;line-height: 50rpx;">{{item.mobile}}</text>
-                            </view>
                         </view>
                     </view>
                 </block>
-
             </view>
         </view>
     </view>

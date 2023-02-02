@@ -3,6 +3,7 @@
 
 page {
     overflow: hidden;
+    background-color: #F5F5F5;
     /*如果有搜索栏，并且搜索栏为fixed时，需设置此CSS*/
 }
 
@@ -50,4 +51,11 @@ page {
 .btn {
     background: #1597f2;
     color: white;
+}
+
+.sercher-item{
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(227, 231, 231, 0.5)
 }

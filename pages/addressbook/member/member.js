@@ -104,7 +104,7 @@ Page({
                         checked: false,  
                     },{
                         id: 102,
-                        name: '小王',
+                        name: '1002',
                         mobile: '13897391221',
                         photo: '/image/user_icon.png',
                         positionName: '职员',
@@ -324,11 +324,7 @@ Page({
                 if (teacherList[i].name.indexOf(searchText) != -1
                     || searchText.indexOf(teacherList[i].name) != -1
                     || teacherList[i]['HZPY'].indexOf(searchText) != -1
-                    || searchText.indexOf(teacherList[i]['HZPY']) != -1
-                    || teacherList[i].mobile.indexOf(searchText) != -1
-                    || searchText.indexOf(teacherList[i].mobile) != -1
-                    || teacherList[i].positionName.indexOf(searchText) != -1
-                    || searchText.indexOf(teacherList[i].positionName) != -1) {
+                    || searchText.indexOf(teacherList[i]['HZPY']) != -1) {
                     userListSearch.push(teacherList[i]);
                 }
             }

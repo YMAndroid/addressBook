@@ -1,5 +1,5 @@
 const ui = require('./ui');
-const BASE_URL = 'https://freetalk.org.cn:19443'//'https://freetalk.org.cn:19443'
+const BASE_URL = 'https://freetalk.org.cn:19443'//'https://49.232.17.228:1944'//'https://freetalk.org.cn:19443'//'https://freetalk.org.cn:19443'
  
 /**
  * 网络请求request

@@ -5,20 +5,21 @@ Page({
      * 页面的初始数据
      */
     data: {
-        userInfoObj: {}
+        userInfo: {}
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        console.log("options:",options)
         this.setData({
-            userInfoObj: JSON.parse(options.userInfoObj)
+            userInfo: JSON.parse(options.userInfo)
         })
     },
     copyInfo() {
-        console.log("ppppp:",this.data.userInfoObj)
+        console.log("ppppp:",this.data.userInfo)
         wx.setClipboardData({
-            data: this.data.userInfoObj.phoneNum//需要复制的文本
+            data: this.data.userInfo.mobile//需要复制的文本
         })
     },
 })

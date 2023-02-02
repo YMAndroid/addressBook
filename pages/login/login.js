@@ -52,19 +52,28 @@ Page({
             })
         } else {
             this.jumpToMain();
-            // let obj = {
-            //     method: "POST",
-            //     showLoading: true,
-            //     url: `/api/wx/user/${this.data.appid}/login?code=xxx&password=${this.data.password}&loginName=${this.data.username}`,
-            //     message: "正在注册..."
-            // }
-            // httpUtils.request(obj).then(res => {
-            //     //保存token
-            //     //wx.setStorage(option);
-            //     ui.showToast(res.data.msg)
-            // }).catch(err => {
-            //     console.log('ERROR')
-            // });
+            let obj = {
+                method: "POST",
+                showLoading: true,
+                url: `/api/wx/user/${this.data.appid}/login?code=xxx&password=${this.data.password}&loginName=${this.data.username}`,
+                message: "正在注册..."
+            }
+            httpUtils.request(obj).then(res => {
+                if (res.data.code == 0) {
+                    let obj = {
+                        userId: "0001",
+                        token: "yyyyymmmmm",
+                    }
+                    //登录成功--存储登录用户信息
+                    wx.setStorage({
+                        key: "userInfo",
+                        data: obj,
+                    })
+                }
+                ui.showToast(res.data.msg)
+            }).catch(err => {
+                console.log('ERROR')
+            });
         }
     }
 })

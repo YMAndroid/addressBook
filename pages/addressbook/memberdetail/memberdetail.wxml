@@ -4,10 +4,10 @@
     <view class="avatar-wrapper">
         <view>
             <view class="avatar">
-                <image style="border-radius:50%;" src="{{userInfoObj.icon ? userInfoObj.icon:'/image/user_icon.png'}}"></image>
+                <image style="border-radius:50%;" src="{{userInfo.photo ? userInfo.photo:'/image/user_icon.png'}}"></image>
             </view>
             <view class="text">
-                <text>{{userInfoObj.name}}</text>
+                <text>{{userInfo.name}}</text>
             </view>
         </view>
     </view>
@@ -15,23 +15,23 @@
         <view class="alllists">
             <view class="content-item">
                 <text>姓名：</text>
-                <text></text>
+                <text>{{userInfo.name}}</text>
             </view>
             <view class="content-item">
                 <text>电话：</text>
-                <text></text>
+                <text>{{userInfo.mobile}}</text>
             </view>
-            <view class="content-item">
+            <!-- <view class="content-item">
                 <text>手机号码：</text>
                 <view class="phone-item">
                     <text>{{userInfoObj.phoneNum}}</text>
-                    <!-- <view bindtap="copyInfo" style="margin-left: 40rpx;display: flex;flex-direction: row;align-items: center;">
+                    <view bindtap="copyInfo" style="margin-left: 40rpx;display: flex;flex-direction: row;align-items: center;">
                         <image style="width: 50rpx;height: 50rpx;" src="/image/copy.png"></image>
                         <view style="color: rgb(152, 153, 153);">复制</view>
-                    </view> -->
+                    </view>
                 </view>
 
-            </view>
+            </view> -->
         </view>
     </view>
 </view>
