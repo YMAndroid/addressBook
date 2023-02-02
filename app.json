@@ -7,10 +7,7 @@
     "pages/addressbook/group/group",
     "pages/addressbook/member/member",
     "pages/addressbook/goodfriend/goodfriend",
-    "pages/addressbook/memberdetail/memberdetail",
-    "pages/index/index",
-    "pages/userlist/userlist",
-    "pages/userinfo/userinfo"
+    "pages/addressbook/memberdetail/memberdetail"
   ],
   "window":{
     "backgroundTextStyle":"light",
