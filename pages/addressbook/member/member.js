@@ -82,13 +82,13 @@ Page({
             if (res.data.code == 0) {
                 //处理数据
                 let tempData = [];
-                if (res.data.rows) {
-                    for (let i = 0; i < res.data.rows.length; i++) {
+                if (res.data.data) {
+                    for (let i = 0; i < res.data.data.length; i++) {
                         tempData.push({
-                            id: res.data.rows[i].userId,
-                            name: res.data.rows[i].userName,
-                            mobile: res.data.rows[i].phonenumber,
-                            photo: res.data.rows[i].avatar,
+                            id: res.data.data[i].loginName,
+                            name: res.data.data[i].userName,
+                            mobile: res.data.data[i].phonenumber,
+                            photo: res.data.data[i].avatar,
                             checked: false,
                         });
                     }

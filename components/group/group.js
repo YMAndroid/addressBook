@@ -57,7 +57,7 @@ Component({
                     console.log("dialog res =>", res);
                     if (res.confirm) {
                         let data = {
-                            groupid: e.currentTarget.dataset.groupobj.groupId,
+                            groupid: e.currentTarget.dataset.groupobj.groupNo,
                         }
                         let obj = {
                             method: "POST",

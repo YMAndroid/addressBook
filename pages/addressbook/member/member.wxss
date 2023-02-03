@@ -37,8 +37,8 @@ page {
     justify-content: center;
     align-items: center;
     position: fixed;
-    bottom: 0;
-    right: 35px;
+    bottom: 20px;
+    right: 40px;
     background-color: #1597f2;
     border-radius: 50%;
 }

@@ -56,7 +56,7 @@ Page({
                 method: "POST",
                 showLoading: true,
                 url: `/api/wx/user/${this.data.appid}/login?code=xxx&password=${this.data.password}&loginName=${this.data.username}`,
-                message: "正在注册..."
+                message: "正在登录.."
             }
             httpUtils.request(obj).then(res => {
                 if (res.data.code == 0) {
