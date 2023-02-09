@@ -61,8 +61,8 @@ Page({
             httpUtils.request(obj).then(res => {
                 if (res.data.code == 0) {
                     let obj = {
-                        userId: "0001",
-                        token: "yyyyymmmmm",
+                        loginName: this.data.loginName,
+                        password: this.data.password,
                     }
                     //登录成功--存储登录用户信息
                     wx.setStorage({

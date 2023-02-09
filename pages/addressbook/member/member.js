@@ -94,23 +94,23 @@ Page({
                     }
                 }
                 console.log("处理后的数据:",tempData)
-                if(tempData.length == 0){
-                    tempData.push({
-                        id: 100,
-                        name: '艾荔枝',
-                        mobile: '13897391221',
-                        photo: '/image/user_icon.png',
-                        positionName: '职员',
-                        checked: false,  
-                    },{
-                        id: 102,
-                        name: '1002',
-                        mobile: '13897391221',
-                        photo: '/image/user_icon.png',
-                        positionName: '职员',
-                        checked: false,
-                    },)
-                }
+                // if(tempData.length == 0){
+                //     tempData.push({
+                //         id: 100,
+                //         name: '艾荔枝',
+                //         mobile: '13897391221',
+                //         photo: '/image/user_icon.png',
+                //         positionName: '职员',
+                //         checked: false,  
+                //     },{
+                //         id: 102,
+                //         name: '1002',
+                //         mobile: '13897391221',
+                //         photo: '/image/user_icon.png',
+                //         positionName: '职员',
+                //         checked: false,
+                //     },)
+                // }
                 this.setData({
                     teacherList: tempData,
                     checkType: enable ? checkType.multiple : checkType.other,
@@ -245,7 +245,7 @@ Page({
                 if (res.confirm) {
                     let data = {
                         groupid: that.data.groupId,
-                        numList: that.data.chooseUserList
+                        groupList: that.data.chooseUserList
                     }
                     let obj = {
                         method: "POST",

@@ -33,19 +33,24 @@ Component({
         },
         jumpVoice(e) {
             if (longtap != 1) {
-                ui.showToast("该功能暂未上线！");
+                //ui.showToast("该功能暂未上线！");
             }
             let index = this.data.groupList.findIndex(item => item.groupId === e.currentTarget.dataset.groupobj.groupId);
-            this.setData({
-                curIndex: index
-            })
             longtap = 0;
-            console.log("当前索引L:",this.data.curIndex)
-            console.log("eeee=>", e)
         },
+
+        itemClick(e){
+            console.log("itemClick:",e)
+            this.setData({
+                curIndex: e.currentTarget.dataset.index
+            })
+            this.triggerEvent('curindex', { idx: this.data.curIndex })
+        },
+
         jumpBussiness(e) {
             ui.showToast("该功能暂未上线！");
         },
+
         bindlongtap(e) {
             longtap = 1;
             console.log("长按事件:", e);
@@ -69,6 +74,10 @@ Component({
                         httpUtils.request(obj).then(res => {
                             if (res.data.code == 0) {
                                 that.triggerEvent('myevent', { params: true })
+                                this.setData({
+                                    curIndex: 0
+                                })
+                                this.triggerEvent('curindex', { idx: this.data.curIndex })
                             }
                         }).catch(err => {
                             console.log('ERROR')

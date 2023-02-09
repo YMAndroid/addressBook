@@ -1,7 +1,7 @@
 <!--pages/components/group/group.wxml-->
 <scroll-view class="group" scroll-y="true">
-    <block wx:for="{{groupList}}" wx:for-item="item" wx:for-index="idx" data-index="{{index}}">
-        <view class="group-item " hover-class='wsui-btn__hover_list' >
+    <block wx:for="{{groupList}}" data-index="{{index}}">
+        <view class="group-item {{curIndex == index ? 'active' : ''}}" bindtap="itemClick" data-index="{{index}}">
             <image class="group-item-image" src="/image/group_icon.png" bindtap="jumpMember" data-groupId="{{item.groupNo}}"></image>
             <view class="group-item-content" bindtap="jumpVoice" data-groupObj="{{item}}" bindlongtap="bindlongtap">
                 <view class="group-item-content-title">

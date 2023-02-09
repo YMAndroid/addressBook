@@ -99,7 +99,7 @@ Page({
     viewUserInfo(e) {
         console.log("viewUserInfo:", e.currentTarget.dataset.userinfoobj)
         wx.navigateTo({
-            url: '/pages/userinfo/userinfo?userInfoObj=' + JSON.stringify(e.currentTarget.dataset.userinfoobj)
+            url: '/pages/addressbook/memberdetail/memberdetail?userInfo=' + JSON.stringify(e.currentTarget.dataset.userinfoobj)
         })
     },
 

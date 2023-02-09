@@ -24,6 +24,7 @@ Page({
         groupList: [],
         //好友列表
         friendList: [],
+        curChooseGroupIndex: 0,
     },
 
     /**
@@ -38,7 +39,10 @@ Page({
             method: "POST",
             showLoading: true,
             url: `/api/group/list`,
-            message: "加载中..."
+            message: "加载中...",
+            data : {
+                loginName: '1003'
+            }
         }
         httpUtils.request(obj).then(res => {
             console.log("获取的群组：", res);
@@ -63,7 +67,7 @@ Page({
                 url = "/pages/addressbook/group/group"
                 break;
             case tabType.member:
-                url = `/pages/addressbook/member/member?jumpType=2`
+                url = `/pages/addressbook/member/member?jumpType=2&groupId=${this.data.groupList[this.data.curChooseGroupIndex].groupNo}`
                 break;
             case tabType.friend:
                 url = "/pages/addressbook/goodfriend/goodfriend"
@@ -78,9 +82,15 @@ Page({
         })
     },
     myevent(e){
-        console.log(e.detail.params);
+        console.log("myevent===>",e.detail.params);
         if(e.detail.params){
             this.getGroupList();
         }
+    },
+    curSelectIndex(e){
+        console.log("curSelectIndex===>",e);
+        this.setData({
+            curChooseGroupIndex: e.detail.idx
+        })
     }
 })

@@ -10,6 +10,6 @@
     </view>
 
     <view class="content">
-        <group groupList="{{groupList}}" bindmyevent="myevent"></group>
+        <group groupList="{{groupList}}" bindmyevent="myevent" bindcurindex="curSelectIndex"></group>
     </view>
 </view>

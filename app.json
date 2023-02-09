@@ -7,13 +7,47 @@
     "pages/addressbook/group/group",
     "pages/addressbook/member/member",
     "pages/addressbook/goodfriend/goodfriend",
-    "pages/addressbook/memberdetail/memberdetail"
+    "pages/addressbook/memberdetail/memberdetail",
+    "pages/dial/dial",
+    "pages/callrecord/callrecord",
+    "pages/me/me"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#1597f2",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "/image/address_select.png",
+        "iconPath": "image/address.png",
+        "pagePath": "pages/addressbook/main/main",
+        "text": "通讯录"
+      },
+      {
+        "selectedIconPath": "image/dail_select.png",
+        "iconPath": "image/dail.png",
+        "pagePath": "pages/dial/dial",
+        "text": "拨号"
+      },
+      {
+        "selectedIconPath": "image/callrecord_select.png",
+        "iconPath": "image/callrecord.png",
+        "pagePath": "pages/callrecord/callrecord",
+        "text": "通话记录"
+      },
+      {
+        "selectedIconPath": "image/me_select.png",
+        "iconPath": "image/me.png",
+        "pagePath": "pages/me/me",
+        "text": "我的"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
