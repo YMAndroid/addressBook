@@ -8,7 +8,7 @@ Page({
         username: '',
         password: '',
         clientHeight: '',
-        appid: "wxc0966f1fa5d28ef8",
+        appid: "wxc2fdc548b4f218a7",
     },
     onLoad() {
         var that = this
@@ -18,7 +18,16 @@ Page({
                     clientHeight: res.windowHeight
                 });
             }
-        })
+        });
+        let value = wx.getStorageSync('userInfo');
+        console.log("value:===>",value)
+        if(value){
+            this.setData({
+                username: value.loginName,
+                password: value.password
+            })
+            console.log("this.data===>",this.data.username)
+        }
     },
     //跳转到主页
     jumpToMain() {
@@ -51,29 +60,41 @@ Page({
                 title: '密码不能为空',
             })
         } else {
-            this.jumpToMain();
-            let obj = {
-                method: "POST",
-                showLoading: true,
-                url: `/api/wx/user/${this.data.appid}/login?code=xxx&password=${this.data.password}&loginName=${this.data.username}`,
-                message: "正在登录.."
-            }
-            httpUtils.request(obj).then(res => {
-                if (res.data.code == 0) {
-                    let obj = {
-                        loginName: this.data.loginName,
-                        password: this.data.password,
+            //微信登录
+            wx.login({
+                success: res => {
+                    if (res.code) {
+                        //发起网络请求
+                        //三方登录接口
+                        let obj = {
+                            method: "POST",
+                            showLoading: true,
+                            url: `/api/wx/user/${this.data.appid}/login?code=${res.code}&password=${this.data.password}&loginName=${this.data.username}`,
+                            message: "正在登录.."
+                        }
+                        httpUtils.request(obj).then(res => {
+                            if (res.data.code == 0) {
+                                let obj = {
+                                    loginName: this.data.username,
+                                    password: this.data.password,
+                                    token: res.data.msg
+                                }
+                                //登录成功--存储登录用户信息
+                                wx.setStorage({
+                                    key: "userInfo",
+                                    data: obj,
+                                })
+                                this.jumpToMain();
+                            }
+                            ui.showToast(res.data.code == 0 ? '登录成功！' : res.data.msg)
+                        }).catch(err => {
+                            console.log('ERROR')
+                        });
+                    } else {
+                        console.log('登录失败！' + res.errMsg)
                     }
-                    //登录成功--存储登录用户信息
-                    wx.setStorage({
-                        key: "userInfo",
-                        data: obj,
-                    })
                 }
-                ui.showToast(res.data.msg)
-            }).catch(err => {
-                console.log('ERROR')
-            });
+            })
         }
     }
 })

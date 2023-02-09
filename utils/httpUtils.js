@@ -36,7 +36,7 @@ function request(obj) {
         //添加请求头
         header: {
           'Content-Type': contentType ,
-          'token': wx.getStorageSync('token') //获取保存的token
+          'token': wx.getStorageSync('userInfo') ? wx.getStorageSync('userInfo').token : "" //获取保存的token
         },
         //请求成功
         success: function(res) {
