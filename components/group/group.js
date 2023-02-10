@@ -48,7 +48,11 @@ Component({
         },
 
         jumpBussiness(e) {
-            ui.showToast("该功能暂未上线！");
+            console.log("e=----->",e)
+            //ui.showToast("该功能暂未上线！");
+            wx.navigateTo({
+              url: `/pages/addressbook/groupdetail/groupdetail?groupInfo=${JSON.stringify(e.currentTarget.dataset.groupobj)}`,
+            })
         },
 
         bindlongtap(e) {

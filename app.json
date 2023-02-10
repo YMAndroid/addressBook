@@ -8,6 +8,7 @@
     "pages/addressbook/member/member",
     "pages/addressbook/goodfriend/goodfriend",
     "pages/addressbook/memberdetail/memberdetail",
+    "pages/addressbook/groupdetail/groupdetail",
     "pages/dial/dial",
     "pages/callrecord/callrecord",
     "pages/me/me"

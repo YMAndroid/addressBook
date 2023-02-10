@@ -29,9 +29,9 @@
                 <!--checkbox搜索结果-->
                 <block wx:if="{{checkType == 'checkbox'}}">
                     <checkbox-group bindchange="checkBoxChange">
-                        <label wx:for="{{userListSearch}}" wx:key="loginName" class="checkbox">
+                        <label wx:for="{{userListSearch}}" wx:key="id" class="checkbox">
                             <view class="weui-cell weui-cell_access weui-search_r sercher-item" data-item='{{item}}'>
-                                <checkbox value="{{item.loginName}}" checked="{{item.checked}}" />
+                                <checkbox value="{{item.id}}" checked="{{item.checked}}" />
                                 <view class="weui-cell__hd weui-cell_primary weui-menu__flex">
                                     <image src="{{item.photo}}" alt="{{item.name}}" class="bg_light-grey"></image>
                                 </view>

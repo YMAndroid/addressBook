@@ -11,7 +11,7 @@
                     <text>语音组呼</text>
                 </view>
             </view>
-            <view class="group-opt" bindtap="jumpBussiness" data-groupId="{{item.groupId}}">业务</view>
+            <view class="group-opt" bindtap="jumpBussiness" data-groupObj="{{item}}">业务</view>
         </view>
     </block>
 

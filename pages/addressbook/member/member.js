@@ -209,6 +209,7 @@ Page({
                                 ui.showToast('创建成功！')
                                 //创建成功，跳转到主页
                                 wx.redirectTo({
+                                    
                                     url: '/pages/addressbook/main/main',
                                 })
                             }
@@ -398,6 +399,7 @@ Page({
     //选中事件
     checkBoxChange: function (e) {
         console.log('checkBoxChange e', e);
+        console.log("chooseUserList:",this.data.chooseUserList);
         this.setData({
             chooseUserList: e.detail.item ? e.detail.item : e.detail.value
         })

@@ -1,3 +1,4 @@
+/* pages/addressbook/groupdetail/groupdetail.wxss */
 /* pages/userinfo/userinfo.wxss */
 /* pages/user/user.wxss */
 .avatar-wrapper {
@@ -12,10 +13,12 @@
     width: 100px;
     height: 100px;
   }
-  .avatar-wrapper .text {
-    text-align: center;
+
+  .avatar-wrapper-text {
+      margin-top: 80px;
     color: #fff;
   }
+
   .listimg image {
     margin-right: 5px;
     vertical-align: middle;
@@ -69,7 +72,7 @@
 
 .bottom-opt-item-text{
     font-size: 28rpx;
-    color: #1597f2;
+    color: #b3b4b4;
 }
   /* user.wxss */
   
