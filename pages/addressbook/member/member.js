@@ -70,12 +70,16 @@ Page({
         let data = {
             groupid: !enable ? this.data.groupId : '',
         }
+
+        let data1 = {
+            loginName: wx.getStorageSync('userInfo').loginName
+        }
         let obj = {
             method: "POST",
             showLoading: true,
-            url: `/api/group/userlist`,
+            url: this.data.jumpType == jumpType.member  || enable ? `/api/group/totalGroupUserList` : `/api/group/userlist`,
             message: "加载中...",
-            data: data
+            data: this.data.jumpType == jumpType.member  || enable ? data1 : data
         }
         httpUtils.request(obj).then(res => {
             console.log("获取的组成员：", res, ";模式：", checkType.multiple);
@@ -88,35 +92,18 @@ Page({
                             id: res.data.data[i].loginName,
                             name: res.data.data[i].userName,
                             mobile: res.data.data[i].phonenumber,
-                            photo: res.data.data[i].avatar,
+                            photo: '/image/user_icon.png',//res.data.data[i].avatar,
                             checked: false,
                         });
                     }
                 }
-                console.log("处理后的数据:",tempData)
-                // if(tempData.length == 0){
-                //     tempData.push({
-                //         id: 100,
-                //         name: '艾荔枝',
-                //         mobile: '13897391221',
-                //         photo: '/image/user_icon.png',
-                //         positionName: '职员',
-                //         checked: false,  
-                //     },{
-                //         id: 102,
-                //         name: '1002',
-                //         mobile: '13897391221',
-                //         photo: '/image/user_icon.png',
-                //         positionName: '职员',
-                //         checked: false,
-                //     },)
-                // }
+                console.log("处理后的数据:", tempData)
                 this.setData({
                     teacherList: tempData,
                     checkType: enable ? checkType.multiple : checkType.other,
                     optBtnType: enable ? optBtnType.addMember : optBtnType.createGroup
                 })
-                console.log("处理后的原始数据:",this.data.teacherList)
+                console.log("处理后的原始数据:", this.data.teacherList)
                 this.initTeacherList();
             }
         }).catch(err => {
@@ -126,7 +113,7 @@ Page({
 
     //全选或反选事件
     changeCheckAllType: function (e) {
-        //console.log('changeCheckAllType e',e);
+        console.log('changeCheckAllType e',e);
         //标记为开启全选或反选操作功能
         this.setData({
             checkAllFlag: true,
@@ -414,7 +401,7 @@ Page({
         this.setData({
             chooseUserList: e.detail.item ? e.detail.item : e.detail.value
         })
-        ui.showToast('已选择[' + this.data.chooseUserList.length + ']个对象');
+        //ui.showToast('已选择[' + this.data.chooseUserList.length + ']个对象');
         console.log("选择的用户列表:", this.data.chooseUserList)
         //设置上一页选择数据
         var pages = getCurrentPages();

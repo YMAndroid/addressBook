@@ -1,9 +1,9 @@
 <!--pages/addressbook/member/member.wxml-->
 <view class="weui-search-bar" id="searchBar">
-    <view wx:if="{{checkType == 'checkbox' && !searchFocus}}" class="weui-search-bar__form weui-search-bar__cancel-btn weui-menu__flex" style="flex-basis: 0;margin-left: 0rpx;margin-right: 10rpx;" bindtap="changeCheckAllType">
+    <!-- <view wx:if="{{checkType == 'checkbox' && !searchFocus}}" class="weui-search-bar__form weui-search-bar__cancel-btn weui-menu__flex" style="flex-basis: 0;margin-left: 0rpx;margin-right: 10rpx;" bindtap="changeCheckAllType">
         <text class="iconfont icon-allcheck {{!checkAllType ? 'grey' : 'success'}}"></text>
         <text class="{{}}">{{!checkAllType ? '全选' : '反选'}}</text>
-    </view>
+    </view> -->
     <form class="weui-search-bar__form">
         <view class="weui-search-bar__box weui-menu__flex">
             <text class="iconfont icon-search weui-icon-search"></text>

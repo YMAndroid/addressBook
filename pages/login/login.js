@@ -11,10 +11,9 @@ Page({
         appid: "wxc2fdc548b4f218a7",
     },
     onLoad() {
-        var that = this
         wx.getSystemInfo({
-            success: function (res) {
-                that.setData({
+            success: res=> {
+                this.setData({
                     clientHeight: res.windowHeight
                 });
             }
@@ -31,12 +30,13 @@ Page({
     },
     //跳转到主页
     jumpToMain() {
-        wx.redirectTo({
+        wx.switchTab({
             url: '/pages/addressbook/main/main',
         })
     },
     //获取输入款内容
     content(e) {
+        console.log("content===>",e);
         this.setData({
             username: e.detail.value
         })
