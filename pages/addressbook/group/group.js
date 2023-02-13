@@ -18,17 +18,23 @@ Page({
         this.getGroupList();
     },
     getGroupList() {
+        let data1 = {
+            loginName: wx.getStorageSync('userInfo').loginName
+        }
         let obj = {
             method: "POST",
             showLoading: true,
-            url: `/api/group/list`,
-            message: "加载中..."
+            url: `/api/group/usergrouplist`,
+            message: "加载中...",
+            data: data1,
         }
         httpUtils.request(obj).then(res => {
             console.log("获取的群组：",res);
-            this.setData({
-                groupList: res.data.rows ? res.data.rows : []
-            })
+            if(res.data.code == 0){
+                this.setData({
+                    groupList: res.data.data ? res.data.data : []
+                })
+            }
         }).catch(err => {
             console.log('ERROR')
         });

@@ -86,6 +86,10 @@ Component({
 
             }
         },
+        showCall: {
+            ype: Boolean,
+            value: false,
+        }
     },
 
     //内部数据源
@@ -214,7 +218,12 @@ Component({
         },
 
         _itemtap: function (e) {
+            console.log("___________",e)
             this.triggerEvent('itemtap', { 'item': e.currentTarget.dataset.item }, {})
+        },
+
+        _itemtap_call: function (e) {
+            this.triggerEvent('itemtapcall', { 'item': e.currentTarget.dataset.item }, {})
         },
 
         _copyphonekey: function (e) {

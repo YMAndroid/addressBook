@@ -61,6 +61,7 @@
                             <view>{{item[textKey]}}</view>
                         </view>
                         <view wx:if='{{checkIcon && item[checkIcon]}}' class='item-text weui-menulist__flex-end warning'><text class="iconfont menu {{item[checkIcon]}}"></text></view>
+                        <image wx:if="{{showCall}}" bindtap='_itemtap_call' style="width: 20px;height: 20px;margin-right: 20px;" src="/image/ic_contact_call.png"></image>
                     </view>
                     <view wx:if="{{j != pitem.data.length - 1}}" class='divide-line'></view>
                 </block>

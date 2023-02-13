@@ -1,8 +1,30 @@
-<!--pages/addressbook/organization/organization.wxml-->
-<view class="main">
-    <view class="item" bindtap="jumpList">
-        <text>北京某某科技公司</text>
-        <image src="/image/right.png" class="item-image"></image>
+<!--pages/addressbook/organization/organizationlist/organizationlist.wxml-->
+<!--pages/addressbook/addressbook.wxml-->
+<view>
+    <scroll-view scroll-x="true" class="dept-head"  wx:if="{{organizationList.length > 0}}">
+        <view class="dept-head-content">
+            <view wx:for="{{organizationList}}" data-index="{{index}}" class="dept-head-item" bindtap="jumpToDept">
+                <view class="dept-head-name {{index == curIndex ? 'active': '' }}">{{item.name}}</view>
+                <image wx:if="{{organizationList.length > 1 && index < organizationList.length - 1}} " class="callPhone" src="/image/right.png" catchtap="callGetPhone"></image>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="alphabet">
+        <!-- 部门数据列表 -->
+        <view class="alphabet-list">
+            <view class="section-item">
+                <view wx:for="{{deptData}}" wx:for-item="deptItem" wx:for-index="idx" class="section-item-cells">
+                    <view class="section-item-cell {{'border-bottom'}}" data-obj="{{deptItem}}" bindtap="deptClick">
+                        <view class="dept-name">
+                            <text class="dept-text">{{deptItem.name}}</text>
+                            <image class="callPhone" src="/image/right.png" catchtap="callGetPhone"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <!-- 用户数据列表 -->
+        <alphabet-order-list id="alphabet_order_list" source="{{userData}}" groupKey="HZPY" imageKey="icon" textKey="nickname" phoneKey="mobilenum" checkType="{{checkType}}" showCall="true"  catchitemtap="itemClickEvent" catchitemtapcall="itemCallClickEvent" />
     </view>
-    
 </view>

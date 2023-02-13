@@ -208,8 +208,7 @@ Page({
                             if (res.data.code == 0) {
                                 ui.showToast('创建成功！')
                                 //创建成功，跳转到主页
-                                wx.redirectTo({
-                                    
+                                wx.switchTab({
                                     url: '/pages/addressbook/main/main',
                                 })
                             }

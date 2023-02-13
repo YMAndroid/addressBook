@@ -1,4 +1,6 @@
 {
-    "usingComponents": {},
-    "navigationBarTitleText": "组织架构"
+    "usingComponents": {
+        "alphabet-order-list": "/components/alphabet-order-list/alphabet-order-list"
+    },
+    "navigationBarTitleText": "通讯录"
 }

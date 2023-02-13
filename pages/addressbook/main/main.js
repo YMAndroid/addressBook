@@ -31,24 +31,30 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-        this.getGroupList();
         this.getFriendList();
     },
+
+    onShow(){
+        this.getGroupList();
+    },
+
     getGroupList() {
         let obj = {
             method: "POST",
             showLoading: true,
-            url: `/api/group/list`,
+            url: `/api/group/usergrouplist`,
             message: "加载中...",
             data : {
-                loginName: '1003'
+                loginName: wx.getStorageSync('userInfo').loginName
             }
         }
         httpUtils.request(obj).then(res => {
             console.log("获取的群组：", res);
-            this.setData({
-                groupList: res.data.rows ? res.data.rows : []
-            })
+            if(res.data.code == 0){
+                this.setData({
+                    groupList: res.data.data ? res.data.data : []
+                })
+            }
         }).catch(err => {
             console.log('ERROR')
         });

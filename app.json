@@ -3,7 +3,6 @@
     "pages/login/login",
     "pages/addressbook/main/main",
     "pages/addressbook/organization/organization",
-    "pages/addressbook/organization/organizationlist/organizationlist",
     "pages/addressbook/group/group",
     "pages/addressbook/member/member",
     "pages/addressbook/goodfriend/goodfriend",
