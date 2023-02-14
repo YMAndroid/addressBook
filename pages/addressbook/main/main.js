@@ -1,6 +1,7 @@
 // pages/addressbook/main/main.js
 const httpUtils = require('../../../utils/httpUtils')
 const ui = require('../../../utils/ui')
+const constants = require('../../../utils/constants')
 let tabType = {
     dept: 1,
     group: 2,
@@ -42,7 +43,7 @@ Page({
         let obj = {
             method: "POST",
             showLoading: true,
-            url: `/api/group/usergrouplist`,
+            url: constants.getGroupListApi,
             message: "加载中...",
             data : {
                 loginName: wx.getStorageSync('userInfo').loginName

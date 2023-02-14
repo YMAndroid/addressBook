@@ -3,6 +3,7 @@
 //获取应用实例
 const httpUtils = require('../../utils/httpUtils')
 const ui = require('../../utils/ui')
+const constants = require('../../utils/constants')
 Page({
     data: {
         username: '',
@@ -69,7 +70,7 @@ Page({
                         let obj = {
                             method: "POST",
                             showLoading: true,
-                            url: `/api/wx/user/${this.data.appid}/login?code=${res.code}&password=${this.data.password}&loginName=${this.data.username}`,
+                            url: `${constants.loginApi}${this.data.appid}/login?code=${res.code}&password=${this.data.password}&loginName=${this.data.username}`,
                             message: "正在登录.."
                         }
                         httpUtils.request(obj).then(res => {

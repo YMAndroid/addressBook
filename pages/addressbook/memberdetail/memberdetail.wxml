@@ -1,6 +1,6 @@
 <!--pages/userinfo/userinfo.wxml-->
 <!--pages/user/user.wxml-->
-<view class="mine-wrapper">
+<view wx:if="{{!webViewUrl}}" class="mine-wrapper">
     <view class="avatar-wrapper">
         <view>
             <view class="avatar">
@@ -41,10 +41,13 @@
 
     <view class="bottom-opt">
     <block wx:for="{{bottomOpt}}">
-        <view class="bottom-opt-item">
+        <view class="bottom-opt-item" bindtap="optClick" data-type="{{item.type}}">
             <image src="{{item.icon}}" class="bottom-opt-item-image"></image>
             <text class="bottom-opt-item-text">{{item.name}}</text>
         </view>
     </block>
     </view>
+</view>
+<view wx:else>
+    <web-view src="{{webViewUrl}}" bindload="onWebLoad" binderror="onWebError"></web-view>
 </view>

@@ -1,6 +1,7 @@
 // pages/components/group/group.js
 const ui = require('../../utils/ui')
 const httpUtils = require('../../utils/httpUtils')
+const constants = require('../../utils/constants')
 let longtap = 0;
 Component({
     /**
@@ -71,7 +72,7 @@ Component({
                         let obj = {
                             method: "POST",
                             showLoading: true,
-                            url: `/api/group/delGroup`,
+                            url: constants.deleteGroupApi,
                             message: "删除中...",
                             data: data
                         }

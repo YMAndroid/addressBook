@@ -3,6 +3,7 @@ const httpUtils = require('../../../utils/httpUtils')
 const ui = require('../../../utils/ui')
 //引入汉字转拼音插件
 var pinyin = require("../../../utils/pinyin/web-pinyin.js");
+const constants = require('../../../utils/constants')
 //获取应用实例
 const app = getApp()
 //此页全局即时搜索状态
@@ -77,7 +78,7 @@ Page({
         let obj = {
             method: "POST",
             showLoading: true,
-            url: this.data.jumpType == jumpType.member  || enable ? `/api/group/totalGroupUserList` : `/api/group/userlist`,
+            url: this.data.jumpType == jumpType.member  || enable ? constants.getAllMemberListApi  : constants.getMemberListApi,
             message: "加载中...",
             data: this.data.jumpType == jumpType.member  || enable ? data1 : data
         }
@@ -155,7 +156,7 @@ Page({
                     let obj = {
                         method: "POST",
                         showLoading: true,
-                        url: `/api/group/addGroupMember`,
+                        url: constants.addGroupMemberApi,
                         message: "添加中...",
                         data: data
                     }
@@ -195,12 +196,13 @@ Page({
                     } else {
                         let data = {
                             groupName: res.content,
-                            groupList: that.data.chooseUserList
+                            groupList: that.data.chooseUserList,
+                            loginName: wx.getStorageSync('userInfo').loginName
                         }
                         let obj = {
                             method: "POST",
                             showLoading: true,
-                            url: `/api/group/addGroup`,
+                            url: constants.addGroupApi,
                             message: "创建中...",
                             data: data
                         }
@@ -237,7 +239,7 @@ Page({
                     let obj = {
                         method: "POST",
                         showLoading: true,
-                        url: `/api/group/delGroupMember`,
+                        url: constants.deleteGrouoMemberApi,
                         message: "删除中...",
                         data: data
                     }

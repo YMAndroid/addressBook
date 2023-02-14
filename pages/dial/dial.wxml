@@ -1,4 +1,4 @@
 <!--pages/dial/dial.wxml-->
 <view class="webview_page">
-<web-view src="{{webViewUrl}}"></web-view>
+<web-view src="{{webViewUrl}}" bindload="onWebLoad" binderror="onWebError"></web-view>
 </view>

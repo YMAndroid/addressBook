@@ -1,6 +1,7 @@
 // pages/addressbook/addressbook.js
 const httpUtils = require('../../../utils/httpUtils')
 const ui = require('../../../utils/ui')
+const constants = require('../../../utils/constants')
 //引入汉字转拼音插件
 var pinyin = require("../../../utils/pinyin/web-pinyin.js");
 Page({
@@ -30,7 +31,7 @@ Page({
         let obj = {
             method: "POST",
             showLoading: true,
-            url: `/api/demo/deptNum?num=${wx.getStorageSync('userInfo').loginName}`,
+            url: `${constants.getAddressListApi}?num=${wx.getStorageSync('userInfo').loginName}`,
             message: "正在登录.."
         }
         httpUtils.request(obj).then(res => {
@@ -45,7 +46,7 @@ Page({
             }
         }).catch(err => {
             console.log('ERROR')
-        });
+        }); 
     },
 
     // 拨打电话给

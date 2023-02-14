@@ -1,16 +1,26 @@
 // pages/dial/dial.js
+const constants = require('../../utils/constants')
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        webViewUrl: "https://ptalk.com.cn:449/webrtcdemo.html",
+        webViewUrl: constants.webViewUrl,
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
+        console.log('options====>',options);
     },
+
+    onWebLoad(){
+        console.log("onWebLoad===>",this)
+    },
+
+    onWebError() {
+    }
+
 })

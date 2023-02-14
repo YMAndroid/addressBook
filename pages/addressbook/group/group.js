@@ -1,6 +1,7 @@
 // pages/addressbook/group/group.js
 const httpUtils = require('../../../utils/httpUtils')
 const ui = require('../../../utils/ui')
+const constants = require('../../../utils/constants')
 Page({
 
     /**
@@ -24,7 +25,7 @@ Page({
         let obj = {
             method: "POST",
             showLoading: true,
-            url: `/api/group/usergrouplist`,
+            url: constants.getGroupListApi,
             message: "加载中...",
             data: data1,
         }
