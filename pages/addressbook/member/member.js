@@ -194,10 +194,11 @@ Page({
                         ui.showToast("请输入群组名称!")
                         return;
                     } else {
+                        let tempArr = that.data.chooseUserList;
+                        tempArr.push(wx.getStorageSync('userInfo').loginName);
                         let data = {
                             groupName: res.content,
-                            groupList: that.data.chooseUserList,
-                            loginName: wx.getStorageSync('userInfo').loginName
+                            groupList: tempArr,
                         }
                         let obj = {
                             method: "POST",

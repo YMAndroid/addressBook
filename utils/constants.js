@@ -19,6 +19,8 @@ const getAllMemberListApi = "/api/group/totalGroupUserList";
 const getMemberListApi = "/api/group/userlist";
 //获取组织通讯录
 const getAddressListApi = "/api/demo/deptNum";
+//通话记录
+const callrecordListApi = "/api/callrecord/list";
 module.exports = {
     baseUrl,
     webViewUrl,
@@ -30,5 +32,6 @@ module.exports = {
     deleteGrouoMemberApi,
     getAllMemberListApi,
     getMemberListApi,
-    getAddressListApi
+    getAddressListApi,
+    callrecordListApi
   }

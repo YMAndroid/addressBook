@@ -1,2 +1,26 @@
 <!--pages/callrecord/callrecord.wxml-->
-<text>通话记录</text>
+<view class="group">
+    <block wx:for="{{callRecordList}}" data-index="{{index}}">
+        <view class="group-item {{item.isTouchMove?'list-item-touch-active':''}}" bindtouchstart="touchstart" bindtouchmove="touchmove" data-id="{{item.id}}">
+            <view class="content">
+                <image class="group-item-image" src="{{item.callednum == loginName ? '/image/phone_come.png' : '/image/phone_go.png'}}"></image>
+                <view class="group-item-content" data-groupObj="{{item}}" bindlongtap="bindlongtap">
+                    <view class="group-item-content-title">
+                        <text>{{item.callednum}}</text>
+                    </view>
+                    <view class="group-item-content-desc">
+                        <text>{{item.callbeginTime}}</text>
+                    </view>
+                </view>
+                <view class="group-opt" bindtap="jumpMessage" data-callObj="{{item}}">
+                    {{item.times}}
+                    <image src="/image/actfriendinfo_msg.png" class="group-opt-image"></image>
+                </view>
+            </view>
+            <view class="item-delete" bindtap="deleteRocord" data-id="{{item.id}}">
+                <text>删除</text>
+            </view>
+        </view>
+    </block>
+
+</view>

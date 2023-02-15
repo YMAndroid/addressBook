@@ -1,1 +1,106 @@
 /* pages/callrecord/callrecord.wxss */
+.group {
+    display: flex;
+    flex-direction: column;
+    background-color: #e9e6e6;
+    height: 100vh;
+}
+
+.group-item {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    border-bottom: 1px solid #e9e6e6;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 20rpx 0 20rpx;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    -webkit-transform: translateX(180rpx);
+    transform: translateX(180rpx);
+    margin-left: -200rpx;
+}
+
+.item-delete {
+    width: 100rpx;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: red;
+    color: #fff;
+    font-size: 32rpx;
+    -webkit-transform: translateX(180rpx);
+    transform: translateX(180rpx);
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.list-item-touch-active .item-content {
+    margin-left: -100rpx;
+}
+
+.list-item-touch-active .content,
+.list-item-touch-active .item-delete {
+    -webkit-transform: translateX(0) !important;
+    transform: translateX(0) !important;
+}
+
+.group-item-image {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+.group-item-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    align-content: center;
+    justify-content: center;
+    height: 50px;
+    flex: 4;
+}
+
+.group-item-content-title {
+    font-size: 28rpx;
+}
+
+.group-item-content-desc {
+    font-size: 18rpx;
+    color: #999999;
+}
+
+.group-opt:last-child {
+    margin-left: auto;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-size: 18rpx;
+    color: #999999;
+}
+
+.wsui-btn__hover_list {
+    opacity: 0.9;
+    background: #e9e6e6;
+}
+
+.active {
+    background-color: #c4e4f7;
+}
+
+.group-opt-image {
+    width: 30px;
+    height: 30px;
+}
