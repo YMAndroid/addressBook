@@ -14,9 +14,10 @@ const formatNumber = n => {
     return n[1] ? n : `0${n}`
 }
 
-function humandate(beginTime, endTime) {
-    let msTime = new Date(endTime) - new Date(beginTime);
-    console.log("msTime===>", msTime)
+function humandate(msTime) {
+    //beginTime, endTime
+    // let msTime = new Date(endTime) - new Date(beginTime);
+    // console.log("msTime===>", msTime)
     let time = msTime / 1000;
     let hour = Math.floor(time / 60 / 60);
     hour = hour.toString().padStart(2, "0");

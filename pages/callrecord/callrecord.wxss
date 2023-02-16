@@ -44,15 +44,15 @@
     transition: all 0.4s;
 }
 
-.list-item-touch-active .item-content {
+/* .list-item-touch-active .item-content {
     margin-left: -100rpx;
-}
+} */
 
-.list-item-touch-active .content,
+/* .list-item-touch-active .content,
 .list-item-touch-active .item-delete {
     -webkit-transform: translateX(0) !important;
     transform: translateX(0) !important;
-}
+} */
 
 .group-item-image {
     width: 40px;

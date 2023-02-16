@@ -36,7 +36,7 @@ Page({
         httpUtils.request(obj).then(res => {
             if (res.data.code == 0) {
                 for(let i=0; i<res.data.rows.length;i++){
-                    res.data.rows[i].times = utils.humandate(res.data.rows[i].hanguptime,res.data.rows[i].createTime)
+                    res.data.rows[i].times = utils.humandate(res.data.rows[i].billsec)
                     res.data.rows[i].isTouchMove = false
                 }
                 console.log("0000000===>",res.data.rows);

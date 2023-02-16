@@ -1,7 +1,8 @@
 <!--pages/callrecord/callrecord.wxml-->
 <view class="group">
     <block wx:for="{{callRecordList}}" data-index="{{index}}">
-        <view class="group-item {{item.isTouchMove?'list-item-touch-active':''}}" bindtouchstart="touchstart" bindtouchmove="touchmove" data-id="{{item.id}}">
+        <!-- <view class="group-item {{item.isTouchMove?'list-item-touch-active':''}}" bindtouchstart="touchstart" bindtouchmove="touchmove" data-id="{{item.id}}"> -->
+            <view class="group-item" data-id="{{item.id}}">
             <view class="content">
                 <image class="group-item-image" src="{{item.callednum == loginName ? '/image/phone_come.png' : '/image/phone_go.png'}}"></image>
                 <view class="group-item-content" data-groupObj="{{item}}" bindlongtap="bindlongtap">
@@ -17,9 +18,9 @@
                     <image src="/image/actfriendinfo_msg.png" class="group-opt-image"></image>
                 </view>
             </view>
-            <view class="item-delete" bindtap="deleteRocord" data-id="{{item.id}}">
+            <!-- <view class="item-delete" bindtap="deleteRocord" data-id="{{item.id}}">
                 <text>删除</text>
-            </view>
+            </view> -->
         </view>
     </block>
 
