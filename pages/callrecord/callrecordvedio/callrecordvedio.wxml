@@ -1,0 +1,15 @@
+<!--pages/callrecord/callrecordvedio/callrecordvedio.wxml-->
+<view class="page-body">
+  <view class="page-section tc">
+    <video 
+      id="myVideo" 
+      src="{{src}}" 
+      binderror="videoErrorCallback" 
+      show-center-play-btn='{{false}}' 
+      show-play-btn="{{true}}"
+      show-fullscreen-btn="{{false}}"
+      controls
+      object-fit="contain"
+    ></video>
+  </view>
+</view>

@@ -10,6 +10,7 @@
     "pages/addressbook/groupdetail/groupdetail",
     "pages/dial/dial",
     "pages/callrecord/callrecord",
+    "pages/callrecord/callrecordvedio/callrecordvedio",
     "pages/me/me"
   ],
   "window":{
