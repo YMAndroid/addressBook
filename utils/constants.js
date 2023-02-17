@@ -1,5 +1,7 @@
 //const constants = require('../../utils/constants')
 const baseUrl = "https://ptalk.com.cn:19443";
+//附件
+const attrUrl = "https://ptalk.com.cn:18090";
 const webViewUrl = "https://ptalk.com.cn:443/webrtcdemo.html";
 //登录
 const loginApi = "/api/wx/user/";
@@ -23,6 +25,7 @@ const getAddressListApi = "/api/demo/deptNum";
 const callrecordListApi = "/api/callrecord/list";
 module.exports = {
     baseUrl,
+    attrUrl,
     webViewUrl,
     loginApi,
     getGroupListApi,

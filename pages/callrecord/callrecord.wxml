@@ -1,8 +1,8 @@
 <!--pages/callrecord/callrecord.wxml-->
 <view class="group">
-    <block wx:for="{{callRecordList}}" data-index="{{index}}">
+    <block wx:for="{{callRecordList}}" wx:key="id">
         <!-- <view class="group-item {{item.isTouchMove?'list-item-touch-active':''}}" bindtouchstart="touchstart" bindtouchmove="touchmove" data-id="{{item.id}}"> -->
-            <view class="group-item" data-id="{{item.id}}">
+        <view class="group-item" data-index="{{index}}" bindtap="itemClick">
             <view class="content">
                 <image class="group-item-image" src="{{item.callednum == loginName ? '/image/phone_come.png' : '/image/phone_go.png'}}"></image>
                 <view class="group-item-content" data-groupObj="{{item}}" bindlongtap="bindlongtap">
@@ -15,9 +15,17 @@
                 </view>
                 <view class="group-opt" bindtap="jumpMessage" data-callObj="{{item}}">
                     {{item.times}}
-                    <image src="/image/actfriendinfo_msg.png" class="group-opt-image"></image>
+                    <text wx:if="{{isPlay && index == playIndex}}" class="play-text">正在播放...</text>
+                    <text wx:if="{{isPause && index == playIndex}}" class="play-text">暂停中...</text>
+                    <!-- <image src="/image/actfriendinfo_msg.png" class="group-opt-image"></image> -->
                 </view>
             </view>
+            <!-- <view class="music" >
+                <image src="/image/pause.png" wx:if="{{!isPlay}}" bindtap="audioPlay"></image>
+                <image src="/image/pause.png" wx:else bindtap="audioPause"></image>
+                <slider step="1" value="{{currentTime}}" bindchanging="bindchanging" bindchange="bindchange" max="{{duration}}" backgroundColor="#efefef" activeColor="#90BED5" />
+                <view class="time">{{time}}</view>
+            </view> -->
             <!-- <view class="item-delete" bindtap="deleteRocord" data-id="{{item.id}}">
                 <text>删除</text>
             </view> -->
