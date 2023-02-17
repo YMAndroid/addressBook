@@ -2,7 +2,7 @@
 .group {
     display: flex;
     flex-direction: column;
-    background-color: #e9e6e6;
+    /* background-color: #e9e6e6; */
     height: 100vh;
 }
 
@@ -128,4 +128,8 @@
       color: black;
       margin-left: 10rpx;
   }
+
+  .wsui-btn__hover_list{
+    background: #e9e6e6;
+}
   
