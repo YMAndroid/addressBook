@@ -1,0 +1,25 @@
+/* pages/live/liveh5/liveh5.wxss */
+
+
+.bottom-opt {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    background-color: #1597f2;
+    border-radius: 50%;
+}
+
+.bottom-opt-image {
+    width: 30px;
+    height: 30px;
+}
+
+.btn {
+    background: #1597f2;
+    color: white;
+}

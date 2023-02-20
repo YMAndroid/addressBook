@@ -4,7 +4,7 @@
         <!-- <view class="group-item {{item.isTouchMove?'list-item-touch-active':''}}" bindtouchstart="touchstart" bindtouchmove="touchmove" data-id="{{item.id}}"> -->
         <view class="group-item" data-index="{{index}}" bindtap="itemClick" hover-class='wsui-btn__hover_list'> 
             <view class="content">
-                <image class="group-item-image" src="{{item.callednum == loginName ? '/image/phone_come.png' : '/image/phone_go.png'}}"></image>
+                <image class="group-item-image" src="{{item.icon}}"></image>
                 <view class="group-item-content" data-groupObj="{{item}}" bindlongtap="bindlongtap">
                     <view class="group-item-content-title">
                         <text>{{item.callednum}}</text>

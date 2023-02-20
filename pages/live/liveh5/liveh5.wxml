@@ -1,0 +1,8 @@
+<!--pages/live/liveh5/liveh5.wxml-->
+<view>
+    <web-view src="{{rtcUrl}}" bindload="onWebLoad" binderror="onWebError"></web-view>
+
+    <view wx:if="{{rtcUrl}}" class="bottom-opt" wx:if="{{teacherList.length > 0}}">
+        <image src="/image/add.png" class="bottom-opt-image" bindtap="addOpt"></image>
+    </view>
+</view>

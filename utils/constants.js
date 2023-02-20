@@ -1,8 +1,15 @@
 //const constants = require('../../utils/constants')
-const baseUrl = "https://ptalk.com.cn:19443";
+const port1 = 19443;
+const port2 = 18090;
+const defaultPort = 443;
+const baseUrl = "https://ptalk.com.cn";//"https://ptalk.com.cn:19443";
 //附件
-const attrUrl = "https://ptalk.com.cn:18090";
-const webViewUrl = "https://ptalk.com.cn:443/webrtcdemo.html";
+const attrUrl = `${baseUrl}:${port2}`;//"https://ptalk.com.cn:18090";
+//拨号h5
+const webViewUrl = `${baseUrl}:${defaultPort}/webrtcdemo.html`;//"https://ptalk.com.cn:443/webrtcdemo.html";
+//直播H5
+const liveH5 = `${baseUrl}:${port2}/players/rtc_playerdemo.html`;
+const webRtc = "webrtc://ptalk.com.cn:1990/live/";
 //登录
 const loginApi = "/api/wx/user/";
 //获取组
@@ -23,6 +30,8 @@ const getMemberListApi = "/api/group/userlist";
 const getAddressListApi = "/api/demo/deptNum";
 //通话记录
 const callrecordListApi = "/api/callrecord/list";
+//直播列表
+const liveListApi = "/interface/livelist.php";
 module.exports = {
     baseUrl,
     attrUrl,
@@ -36,5 +45,10 @@ module.exports = {
     getAllMemberListApi,
     getMemberListApi,
     getAddressListApi,
-    callrecordListApi
+    callrecordListApi,
+    liveListApi,
+    liveH5,
+    port1,
+    port2,
+    webRtc
   }

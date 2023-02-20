@@ -11,7 +11,9 @@
     "pages/dial/dial",
     "pages/callrecord/callrecord",
     "pages/callrecord/callrecordvedio/callrecordvedio",
-    "pages/me/me"
+    "pages/me/me",
+    "pages/live/live",
+    "pages/live/liveh5/liveh5"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -41,6 +43,12 @@
         "iconPath": "image/callrecord.png",
         "pagePath": "pages/callrecord/callrecord",
         "text": "通话记录"
+      },
+      {
+        "selectedIconPath": "image/live_select.png",
+        "iconPath": "image/live.png",
+        "pagePath": "pages/live/live",
+        "text": "视频"
       },
       {
         "selectedIconPath": "image/me_select.png",

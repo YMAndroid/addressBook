@@ -32,7 +32,6 @@ Page({
             method: "POST",
             showLoading: true,
             url: `${constants.getAddressListApi}?num=${wx.getStorageSync('userInfo').loginName}`,
-            message: "正在登录.."
         }
         httpUtils.request(obj).then(res => {
             if (res.data.responseCode == 0) {

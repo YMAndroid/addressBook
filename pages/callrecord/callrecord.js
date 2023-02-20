@@ -38,6 +38,17 @@ Page({
                 isPause: false
             })
         })
+
+        audioCtx.onError((e)=>{
+            ui.showToast(e.errMsg);
+            console.log("播放错误==>",e)
+            //监听音频自然播放至结束的事件
+            this.setData({
+                isPlay: false,
+                isPause: false
+            })
+        })
+
     },
 
     getCallRocords() {
@@ -45,7 +56,7 @@ Page({
             method: "POST",
             showLoading: true,
             url: constants.callrecordListApi,
-            data: { callnum: wx.getStorageSync('userInfo').loginName }
+            data: { callnum: this.data.loginName }
         }
         httpUtils.request(obj).then(res => {
             if (res.data.code == 0) {
@@ -54,6 +65,19 @@ Page({
                     res.data.rows[i].isTouchMove = false;
                     res.data.rows[i].callType = res.data.rows[i].recordname.includes(".wav") ? attrType.voice : attrType.video;
                     res.data.rows[i].recordname = constants.attrUrl + '/' + res.data.rows[i].recordname;
+                    if(res.data.rows[i].billsec == 0){
+                        if(res.data.rows[i].callednum == this.data.loginName){
+                            res.data.rows[i].icon = "/image/phone_missed.png"
+                        } else {
+                            res.data.rows[i].icon = "/image/phone_cannot.png"
+                        }
+                    } else {
+                        if(res.data.rows[i].callednum == this.data.loginName){
+                            res.data.rows[i].icon = "/image/phone_come.png"
+                        } else {
+                            res.data.rows[i].icon = "/image/phone_go.png"
+                        }
+                    }
                 }
                 this.setData({
                     callRecordList: res.data.rows

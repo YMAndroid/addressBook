@@ -9,3 +9,7 @@
 .page-section{
     height: 100%;
 }
+
+.videoCss{
+    width: 300px;
+}

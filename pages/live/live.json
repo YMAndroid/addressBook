@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "alphabet-order-list": "/components/alphabet-order-list/alphabet-order-list"
+    },
+    "navigationBarTitleText": "视频"
+}

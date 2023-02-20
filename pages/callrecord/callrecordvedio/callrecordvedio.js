@@ -1,5 +1,5 @@
+const ui = require('../../../utils/ui')
 Page({
-
     onLoad(options) {
         console.log("options:", options);
         this.setData({
@@ -24,6 +24,7 @@ Page({
 
     videoErrorCallback(e) {
         console.log('视频错误信息:')
-        console.log(e.detail.errMsg)
+        console.log(e.detail.errMsg);
+        ui.showToast(`视频错误信息:${e.detail.errMsg}`);
     }
 })
