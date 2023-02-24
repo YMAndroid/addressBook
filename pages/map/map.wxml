@@ -1,0 +1,78 @@
+<!--pages/map/map.wxml-->
+<view class="map-container">
+    <view class="head">
+        <view class="bottom-opt">
+            <block wx:for="{{bottomOpt}}">
+                <view class="bottom-opt-item" bindtap="optClick" data-type="{{item.type}}">
+                    <image src="{{item.icon}}" class="bottom-opt-item-image"></image>
+                    <text class="bottom-opt-item-text">{{item.name}}</text>
+                </view>
+            </block>
+        </view>
+    </view>
+    <!-- 人员定位按钮 -->
+    <view class="report" hover-class="location_hover" bindtap="reportClick">
+        <image src="/image/report.png" class="location_image"></image>
+    </view>
+    <!-- 定位 -->
+    <view class="location" hover-class="location_hover" bindtap="locationClick">
+        <image src="/image/location_1.png" class="location_image"></image>
+    </view>
+    <!-- 地图放大/缩小 -->
+    <view class="zoomout">
+        <view class="zoomout_item" hover-class="location_hover" bindtap="zoomOut" data-type="add">
+            <image src="/image/jy_drltsz_btn_addperson.png" class="zoom_image"></image>
+        </view>
+        <view class="zoomout_item" hover-class="location_hover" bindtap="zoomOut" data-type="sub">
+            <image src="/image/icon_btn_deleteperson.png" class="zoom_image"></image>
+        </view>
+    </view>
+    <!-- 地图类型 -->
+    <view class="map-type">
+        <view class="map-type-item" bindtap="mapType">
+            {{
+            enableSatellite ? '平面' : '卫星'
+            }}
+        </view>
+        <view class="map-type-item" style="margin-left: 5px;" bindtap="routeType">{{
+            enableTraffic ? '非路况' : '路况'
+            }}</view>
+    </view>
+    <!-- 地图组件 -->
+    <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" style="width:100%;height:100%;" showLocation="{{true}}" scale="{{scale}}" enable-satellite="{{enableSatellite}}" enable-traffic="{{enableTraffic}}">
+    </map>
+</view>
+
+<!-- 上报人员定位信息弹框 -->
+<modal show="{{showReportModal}}" height='40%' bindcancel="modalReportCancel" bindconfirm='modalReportConfirm' btnNum="3" bindstop="modalReportStop" leftBtnText="开始" rightBtnText="取消">
+    <view class='modal-content'>
+        <text class="title">定位人员</text>
+        <view class="modal-content-input">
+            <input placeholder="号码" bindinput="inputNum" value="{{intervalNum}}" maxlength="11" />
+        </view>
+        <view class="modal-content-input">
+            <input placeholder="定位间隔" bindinput="inputInterval" value="{{interval}}" maxlength="11" />
+        </view>
+    </view>
+</modal>
+
+<!-- 轨迹弹框 -->
+<modal show="{{showTrackModal}}" height='50%' bindcancel="trackCancel" bindconfirm='trackConfirm'>
+    <view class='modal-content'>
+        <text class="title">轨迹回放</text>
+        <view class="modal-content-input">
+            <input placeholder="号码" bindinput="traceNumInput" value="{{traceNum}}" />
+        </view>
+        <view class="modal-content-input" bindtap="getTime" data-type="start">
+            <label class="content-label">开始时间: </label>
+            <time-picker id="startPicker" mode="{{mode}}" class="picker" placeholder="请选择时间" bind:onPickerChange="onPickerChange">
+            </time-picker>
+        </view>
+        <view class="modal-content-input" bindtap="getTime" data-type="end">
+            <label class="content-label">结束时间: </label>
+            <time-picker id="endPicker" mode="{{mode}}" class="picker" placeholder="请选择时间" bind:onPickerChange="onPickerChange">
+            </time-picker>
+            <text></text>
+        </view>
+    </view>
+</modal>

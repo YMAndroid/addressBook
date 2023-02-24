@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "modal": "../../components/modal/modal",
+        "time-picker": "../../components/time-picker/index"
+    },
+    "navigationBarTitleText": "位置信息"
+}

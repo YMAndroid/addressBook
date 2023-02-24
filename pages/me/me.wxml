@@ -1,2 +1,27 @@
 <!--pages/me/me.wxml-->
-<text>我的</text>
+<view class="me-page">
+    <view class="avatar-wrapper">
+        <view>
+            <view class="avatar">
+                <image style="border-radius:50%;" src="/image/user_icon.png"></image>
+            </view>
+            <view class="text">
+                <text>{{loginName}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="list-wrapper">
+        <view class="alllists">
+            <block wx:for="{{listMenu}}">
+                <view class="content-item" bindtap="itemClick" data-type="{{item.type}}">
+                    <view class="item-left">
+                        <image src="{{item.icon}}" class="item-image"></image>
+                        <text>{{item.name}}</text>
+                    </view>
+
+                    <image src="/image/right.png" class="item-image"></image>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

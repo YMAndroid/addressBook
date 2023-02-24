@@ -1,0 +1,13 @@
+<!--components/modal/modal.wxml-->
+<view class='mask' wx:if='{{show}}' bindtap='clickMask'>
+  <view class='modal-content' style='height:{{height}}'>
+    <scroll-view scroll-y class='main-content'>
+      <slot></slot>
+    </scroll-view>
+    <view class='modal-btn-wrapper'>
+      <view class='cancel-btn' style="color:{{leftBtnColor}}" bindtap='cancel' hover-class="hover-btn">{{leftBtnText}}</view>
+      <view wx:if="{{btnNum == 3}}" class='cancel-btn' style="color:{{middleBtnColor}}" bindtap='stop' hover-class="hover-btn">{{middleBtnText}}</view>
+      <view class='confirm-btn' style="color:{{rightBtnColor}}" bindtap='confirm' hover-class="hover-btn">{{rightBtnText}}</view>
+    </view>
+  </view>
+</view>

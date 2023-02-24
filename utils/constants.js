@@ -32,6 +32,10 @@ const getAddressListApi = "/api/demo/deptNum";
 const callrecordListApi = "/api/callrecord/list";
 //直播列表
 const liveListApi = "/interface/livelist.php";
+//获取终端位置信息
+const getTerminalLocationApi = "/api/info/list/udntop";
+//获取终端轨迹
+const getTerminalTrackApi = "/api/info/list/udntime";
 module.exports = {
     baseUrl,
     attrUrl,
@@ -50,5 +54,7 @@ module.exports = {
     liveH5,
     port1,
     port2,
-    webRtc
-  }
+    webRtc,
+    getTerminalLocationApi,
+    getTerminalTrackApi
+}
