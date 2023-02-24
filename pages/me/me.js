@@ -10,7 +10,7 @@ Page({
     data: {
         loginName: "",
         listMenu: [
-            { name: "地图", icon: "/image/map.png", type: 1 }
+            { name: "通讯录", icon: "/image/address.png", type: 1 }
         ]
     },
 
@@ -29,7 +29,7 @@ Page({
         switch(type){
             case itemType.map:
                 wx.navigateTo({
-                  url: '/pages/map/map',
+                  url: '/pages/addressbook/main/main',
                 })
                 break;
         }

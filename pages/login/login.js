@@ -32,7 +32,7 @@ Page({
     //跳转到主页
     jumpToMain() {
         wx.switchTab({
-            url: '/pages/addressbook/main/main',
+            url: '/pages/map/map',
         })
     },
     //获取输入款内容

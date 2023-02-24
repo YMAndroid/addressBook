@@ -28,10 +28,10 @@
         "selectedColor": "#1597f2",
         "borderStyle": "white",
         "list": [{
-                "selectedIconPath": "/image/address_select.png",
-                "iconPath": "image/address.png",
-                "pagePath": "pages/addressbook/main/main",
-                "text": "通讯录"
+                "selectedIconPath": "/image/map_select.png",
+                "iconPath": "image/map.png",
+                "pagePath": "pages/map/map",
+                "text": "地图"
             },
             {
                 "selectedIconPath": "image/dail_select.png",

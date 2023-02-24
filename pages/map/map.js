@@ -219,13 +219,13 @@ Page({
         let obj = {
             method: "POST",
             showLoading: true,
-            url: `${constants.getTerminalTrackApi}`,
+            url: `${constants.getTerminalTrackApi}?udn=${this.data.userPositionNum}&sender=${this.data.startTime}&receiver=${this.data.endTime}`,
             message: "加载中...",
-            data: {
-                udn: this.data.userPositionNum,
-                sender: this.data.startTime,
-                receiver: this.data.endTime
-            }
+            // data: {
+            //     udn: this.data.userPositionNum,
+            //     sender: this.data.startTime,
+            //     receiver: this.data.endTime
+            // }
         }
         httpUtils.request(obj).then(res => {
             if (res.data.code == 0) {

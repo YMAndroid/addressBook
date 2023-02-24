@@ -16,7 +16,7 @@
                 <view class="content-item" bindtap="itemClick" data-type="{{item.type}}">
                     <view class="item-left">
                         <image src="{{item.icon}}" class="item-image"></image>
-                        <text>{{item.name}}</text>
+                        <text style="margin-left: 5px">{{item.name}}</text>
                     </view>
 
                     <image src="/image/right.png" class="item-image"></image>
