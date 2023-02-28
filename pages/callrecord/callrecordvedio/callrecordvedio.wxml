@@ -17,9 +17,9 @@
 </view> -->
 
 <!-- 腾讯视频插件 -->
-<!-- <player-component vid="h35044kmyov" playerid="txv1" class="video"></player-component> -->
+<player-component vid="h35044kmyov" playerid="txv1" class="video"></player-component>
 
-<view class="video_box">
+<!-- <view class="video_box">
     <mi-lin-video
         id="myVideo"
         src="{{src}}" 
@@ -28,5 +28,5 @@
         bindvideoVertifySuccess="videoVertifySuccess"
         bindvideoVertifyFailed="videoVertifyFailed">
   </mi-lin-video>
-</view>
+</view> -->
 
