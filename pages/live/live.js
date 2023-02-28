@@ -13,7 +13,7 @@ Page({
      */
     data: {
         liveList: [],
-        liveListSearch:[],
+        liveListSearch: [],
         checkType: '', //checkbox-多选类型 radio-单选类型 其他-基本通讯录
         searchFocus: false,
         searchText: '',
@@ -179,7 +179,7 @@ Page({
                     || searchText.indexOf(liveList[i].name) != -1
                     || liveList[i]['HZPY'].indexOf(searchText) != -1
                     || searchText.indexOf(liveList[i]['HZPY']) != -1) {
-                        liveListSearch.push(liveList[i]);
+                    liveListSearch.push(liveList[i]);
                 }
             }
             if (liveListSearch.length == 0) {
@@ -199,8 +199,8 @@ Page({
         }
     },
 
-     //初始化数据源，并初始化通讯录列表
-     iniList: function () {
+    //初始化数据源，并初始化通讯录列表
+    iniList: function () {
         var liveList = this.data.liveList;
         //中文转拼音，性能还行
         try {
@@ -223,4 +223,10 @@ Page({
         })
         this.alphabet_order_list = this.selectComponent('#alphabet_order_list');
     },
+
+    /**
+   * 用户点击右上角分享
+   */
+    onShareAppMessage: function () {
+    }
 })

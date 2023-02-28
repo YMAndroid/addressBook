@@ -35,7 +35,7 @@ Page({
         this.getFriendList();
     },
 
-    onShow(){
+    onShow() {
         this.getGroupList();
     },
 
@@ -45,13 +45,13 @@ Page({
             showLoading: true,
             url: constants.getGroupListApi,
             message: "加载中...",
-            data : {
+            data: {
                 loginName: wx.getStorageSync('userInfo').loginName
             }
         }
         httpUtils.request(obj).then(res => {
             console.log("获取的群组：", res);
-            if(res.data.code == 0){
+            if (res.data.code == 0) {
                 this.setData({
                     groupList: res.data.data ? res.data.data : []
                 })
@@ -80,7 +80,7 @@ Page({
                 url = "/pages/addressbook/goodfriend/goodfriend"
                 break;
         }
-        if(type == tabType.friend){
+        if (type == tabType.friend) {
             ui.showToast("该功能暂未实现！")
             return;
         }
@@ -88,16 +88,21 @@ Page({
             url: url,
         })
     },
-    myevent(e){
-        console.log("myevent===>",e.detail.params);
-        if(e.detail.params){
+    myevent(e) {
+        console.log("myevent===>", e.detail.params);
+        if (e.detail.params) {
             this.getGroupList();
         }
     },
-    curSelectIndex(e){
-        console.log("curSelectIndex===>",e);
+    curSelectIndex(e) {
+        console.log("curSelectIndex===>", e);
         this.setData({
             curChooseGroupIndex: e.detail.idx
         })
+    },
+    /**
+   * 用户点击右上角分享
+   */
+    onShareAppMessage: function () {
     }
 })

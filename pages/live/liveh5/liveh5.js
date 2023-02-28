@@ -15,7 +15,7 @@ Page({
         this.setData({
             rtcUrl: `${constants.liveH5}?rtcUrl=${constants.webRtc}${options.name}`
         })
-        
+
     },
 
     onWebLoad() {
@@ -24,5 +24,11 @@ Page({
 
     onWebError(e) {
         console.log("onWebError", e)
+    },
+
+    /**
+   * 用户点击右上角分享
+   */
+    onShareAppMessage: function () {
     }
 })

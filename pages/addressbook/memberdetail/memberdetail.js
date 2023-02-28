@@ -52,7 +52,7 @@ Page({
                 break;
             case optType.voice:
                 let url = `${constants.webViewUrl}?loginName=${wx.getStorageSync('userInfo').loginName}&memNum=${this.data.userInfo.id}&optType=voice`;
-                console.log("url===>",url);
+                console.log("url===>", url);
                 this.setData({
                     webViewUrl: url
                 })
@@ -70,5 +70,11 @@ Page({
             case optType.firends:
                 break;
         }
+    },
+
+    /**
+   * 用户点击右上角分享
+   */
+    onShareAppMessage: function () {
     }
 })

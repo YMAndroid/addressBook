@@ -28,11 +28,17 @@ Page({
         ui.showToast(`视频错误信息:${e.detail.errMsg}`);
     },
 
-    videoVertifySuccess(e){
-        console.log("videoVertifySuccess==>",e);
+    videoVertifySuccess(e) {
+        console.log("videoVertifySuccess==>", e);
     },
 
-    videoVertifyFailed(e){
-        console.log("videoVertifyFailed==>",e);
+    videoVertifyFailed(e) {
+        console.log("videoVertifyFailed==>", e);
+    },
+
+    /**
+   * 用户点击右上角分享
+   */
+    onShareAppMessage: function () {
     }
 })

@@ -78,9 +78,9 @@ Page({
         let obj = {
             method: "POST",
             showLoading: true,
-            url: this.data.jumpType == jumpType.member  || enable ? constants.getAllMemberListApi  : constants.getMemberListApi,
+            url: this.data.jumpType == jumpType.member || enable ? constants.getAllMemberListApi : constants.getMemberListApi,
             message: "加载中...",
-            data: this.data.jumpType == jumpType.member  || enable ? data1 : data
+            data: this.data.jumpType == jumpType.member || enable ? data1 : data
         }
         httpUtils.request(obj).then(res => {
             console.log("获取的组成员：", res, ";模式：", checkType.multiple);
@@ -114,7 +114,7 @@ Page({
 
     //全选或反选事件
     changeCheckAllType: function (e) {
-        console.log('changeCheckAllType e',e);
+        console.log('changeCheckAllType e', e);
         //标记为开启全选或反选操作功能
         this.setData({
             checkAllFlag: true,
@@ -401,7 +401,7 @@ Page({
     //选中事件
     checkBoxChange: function (e) {
         console.log('checkBoxChange e', e);
-        console.log("chooseUserList:",this.data.chooseUserList);
+        console.log("chooseUserList:", this.data.chooseUserList);
         this.setData({
             chooseUserList: e.detail.item ? e.detail.item : e.detail.value
         })
@@ -516,4 +516,10 @@ Page({
             throw ('当前基础库版本小于1.6.0，不支持createSelectorQuery')
         }
     },
+
+    /**
+   * 用户点击右上角分享
+   */
+    onShareAppMessage: function () {
+    }
 })

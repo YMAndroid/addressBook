@@ -13,14 +13,20 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-        console.log('options====>',options);
+        console.log('options====>', options);
     },
 
-    onWebLoad(){
-        console.log("onWebLoad===>",this)
+    onWebLoad() {
+        console.log("onWebLoad===>", this)
     },
 
     onWebError() {
+    },
+
+    /**
+   * 用户点击右上角分享
+   */
+    onShareAppMessage: function () {
     }
 
 })

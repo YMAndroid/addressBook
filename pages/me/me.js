@@ -23,15 +23,21 @@ Page({
         })
     },
 
-    itemClick(e){
-        console.log("ellllll===>",e.currentTarget.dataset.type)
+    itemClick(e) {
+        console.log("ellllll===>", e.currentTarget.dataset.type)
         let type = e.currentTarget.dataset.type;
-        switch(type){
+        switch (type) {
             case itemType.map:
                 wx.navigateTo({
-                  url: '/pages/callrecord/callrecord',
+                    url: '/pages/callrecord/callrecord',
                 })
                 break;
         }
+    },
+
+    /**
+   * 用户点击右上角分享
+   */
+    onShareAppMessage: function () {
     }
 })

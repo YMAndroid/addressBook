@@ -13,20 +13,20 @@ Page({
     },
     onLoad() {
         wx.getSystemInfo({
-            success: res=> {
+            success: res => {
                 this.setData({
                     clientHeight: res.windowHeight
                 });
             }
         });
         let value = wx.getStorageSync('userInfo');
-        console.log("value:===>",value)
-        if(value){
+        console.log("value:===>", value)
+        if (value) {
             this.setData({
                 username: value.loginName,
                 password: value.password
             })
-            console.log("this.data===>",this.data.username)
+            console.log("this.data===>", this.data.username)
         }
     },
     //跳转到主页
@@ -37,7 +37,7 @@ Page({
     },
     //获取输入款内容
     content(e) {
-        console.log("content===>",e);
+        console.log("content===>", e);
         this.setData({
             username: e.detail.value
         })
@@ -97,5 +97,10 @@ Page({
                 }
             })
         }
+    },
+    /**
+       * 用户点击右上角分享
+       */
+    onShareAppMessage: function () {
     }
 })

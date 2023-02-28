@@ -8,8 +8,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-         //群组列表
-         groupList: [],
+        //群组列表
+        groupList: [],
     },
 
     /**
@@ -30,8 +30,8 @@ Page({
             data: data1,
         }
         httpUtils.request(obj).then(res => {
-            console.log("获取的群组：",res);
-            if(res.data.code == 0){
+            console.log("获取的群组：", res);
+            if (res.data.code == 0) {
                 this.setData({
                     groupList: res.data.data ? res.data.data : []
                 })
@@ -40,4 +40,10 @@ Page({
             console.log('ERROR')
         });
     },
+
+    /**
+   * 用户点击右上角分享
+   */
+    onShareAppMessage: function () {
+    }
 })

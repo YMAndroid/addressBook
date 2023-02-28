@@ -45,7 +45,7 @@ Page({
             }
         }).catch(err => {
             console.log('ERROR')
-        }); 
+        });
     },
 
     // 拨打电话给
@@ -122,20 +122,20 @@ Page({
     },
 
     itemClickEvent(e) {
-        console.log("itemClickEvent====",e)
+        console.log("itemClickEvent====", e)
         console.log("viewUserInfo:", e.detail.item)
         let temp = {
-            id:e.detail.item.num,
+            id: e.detail.item.num,
             name: e.detail.item.nickname,
-            mobile:  e.detail.item.mobilenum,
+            mobile: e.detail.item.mobilenum,
         }
         wx.navigateTo({
             url: '/pages/addressbook/memberdetail/memberdetail?userInfo=' + JSON.stringify(temp)
         })
     },
 
-    itemCallClickEvent(e){
-        console.log("call ----->",e);
+    itemCallClickEvent(e) {
+        console.log("call ----->", e);
     },
 
     getTreeItem(list, id) {
@@ -179,4 +179,10 @@ Page({
         })
         this.alphabet_order_list = this.selectComponent('#alphabet_order_list');
     },
+
+    /**
+   * 用户点击右上角分享
+   */
+    onShareAppMessage: function () {
+    }
 })

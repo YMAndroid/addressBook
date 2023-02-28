@@ -39,9 +39,9 @@ Page({
             })
         })
 
-        audioCtx.onError((e)=>{
+        audioCtx.onError((e) => {
             ui.showToast(e.errMsg);
-            console.log("播放错误==>",e)
+            console.log("播放错误==>", e)
             //监听音频自然播放至结束的事件
             this.setData({
                 isPlay: false,
@@ -65,14 +65,14 @@ Page({
                     res.data.rows[i].isTouchMove = false;
                     res.data.rows[i].callType = res.data.rows[i].recordname.includes(".wav") ? attrType.voice : attrType.video;
                     res.data.rows[i].recordname = constants.attrUrl + '/' + res.data.rows[i].recordname;
-                    if(res.data.rows[i].billsec == 0){
-                        if(res.data.rows[i].callednum == this.data.loginName){
+                    if (res.data.rows[i].billsec == 0) {
+                        if (res.data.rows[i].callednum == this.data.loginName) {
                             res.data.rows[i].icon = "/image/phone_missed.png"
                         } else {
                             res.data.rows[i].icon = "/image/phone_cannot.png"
                         }
                     } else {
-                        if(res.data.rows[i].callednum == this.data.loginName){
+                        if (res.data.rows[i].callednum == this.data.loginName) {
                             res.data.rows[i].icon = "/image/phone_come.png"
                         } else {
                             res.data.rows[i].icon = "/image/phone_go.png"
@@ -202,4 +202,10 @@ Page({
             })
         }
     },
+
+    /**
+   * 用户点击右上角分享
+   */
+    onShareAppMessage: function () {
+    }
 })

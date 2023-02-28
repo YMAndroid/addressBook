@@ -399,15 +399,21 @@ Page({
         }
     },
 
-    mapType(){
+    mapType() {
         this.setData({
             enableSatellite: !this.data.enableSatellite
         })
     },
 
-    routeType(){
+    routeType() {
         this.setData({
             enableTraffic: !this.data.enableTraffic
         })
+    },
+
+    /**
+   * 用户点击右上角分享
+   */
+    onShareAppMessage: function () {
     }
 })
