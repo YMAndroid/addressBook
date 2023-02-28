@@ -56,8 +56,8 @@ Page({
         //轨迹列表
         polyline: [],
         //当前位置
-        latitude: 0,
-        longitude: 0,
+        latitude: 39.91488908,
+        longitude: 116.40387397,
         //上报定位弹框
         showReportModal: false,
         //轨迹弹框
@@ -72,6 +72,10 @@ Page({
         mode: "dateTime",
         //用户编号
         userPositionNum: "",
+        //数据时间
+        dataTime: "",
+        //电量
+        battery: "",
         //定位人员编号
         intervalNum: "",
         //定位时间间隔
@@ -182,7 +186,9 @@ Page({
                     this.setData({
                         latitude: res.data.rows[0].latitude,
                         longitude: res.data.rows[0].longitude,
-                        markers: tempArr
+                        markers: tempArr,
+                        battery: res.data.rows[0].battery,
+                        dataTime: res.data.rows[0].datatime,
                     })
                 } else {
                     ui.showToast("无轨迹数据!")
@@ -230,7 +236,7 @@ Page({
         httpUtils.request(obj).then(res => {
             if (res.data.code == 0) {
                 let length = res.data.rows.length;
-                ui.showToast(`共${length}个轨迹点!`)
+                ui.showToast(length == 0 ? '无轨迹数据' : `共${length}个轨迹点!`)
                 if (res.data.rows.length > 1) {
                     let point = [];
                     for (let i = 0; i < res.data.rows.length; i++) {

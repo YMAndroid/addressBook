@@ -10,8 +10,8 @@ Page({
         })
     },
     onReady() {
-        this.videoContext = wx.createVideoContext('myVideo');
-        this.videoContext.play()
+        //this.videoContext = wx.createVideoContext('myVideo');
+        //this.videoContext.play()
     },
     data: {
         src: '',
@@ -26,5 +26,13 @@ Page({
         console.log('视频错误信息:')
         console.log(e.detail.errMsg);
         ui.showToast(`视频错误信息:${e.detail.errMsg}`);
+    },
+
+    videoVertifySuccess(e){
+        console.log("videoVertifySuccess==>",e);
+    },
+
+    videoVertifyFailed(e){
+        console.log("videoVertifyFailed==>",e);
     }
 })

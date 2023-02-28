@@ -13,3 +13,7 @@
 .videoCss{
     width: 300px;
 }
+
+.video_box{
+    height: 200px;
+  }

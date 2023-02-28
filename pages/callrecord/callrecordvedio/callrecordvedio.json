@@ -1,4 +1,7 @@
 {
-    "usingComponents": {},
+    "usingComponents": {
+        "player-component": "plugin://player/video",
+        "mi-lin-video": "plugin://video-plugin/miLin-video"
+    },
     "navigationBarTitleText": "通话视频"
 }

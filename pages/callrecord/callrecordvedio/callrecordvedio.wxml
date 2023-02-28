@@ -1,5 +1,5 @@
 <!--pages/callrecord/callrecordvedio/callrecordvedio.wxml-->
-<view class="page-body">
+<!-- <view class="page-body">
   <view class="page-section tc">
     <video 
       id="myVideo" 
@@ -12,5 +12,21 @@
       object-fit="contain"
     ></video>
   </view>
-  <!-- <web-view src="http://127.0.0.1:8080/index.html"></web-view> -->
+
+  
+</view> -->
+
+<!-- 腾讯视频插件 -->
+<!-- <player-component vid="h35044kmyov" playerid="txv1" class="video"></player-component> -->
+
+<view class="video_box">
+    <mi-lin-video
+        id="myVideo"
+        src="{{src}}" 
+        autoplay="{{true}}"
+        miLinToken = "f9fc7d14f33d11eab23f018010376106"
+        bindvideoVertifySuccess="videoVertifySuccess"
+        bindvideoVertifyFailed="videoVertifyFailed">
+  </mi-lin-video>
 </view>
+
