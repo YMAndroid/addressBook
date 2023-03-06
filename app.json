@@ -15,7 +15,8 @@
         "pages/live/live",
         "pages/live/liveh5/liveh5",
         "pages/map/map",
-        "pages/webview/webview"
+        "pages/webview/webview",
+        "pages/messgaerecord/messgaerecord"
     ],
     "window": {
         "backgroundTextStyle": "light",

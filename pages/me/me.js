@@ -1,6 +1,7 @@
 // pages/me/me.js
 let itemType = {
-    map: 1
+    map: 1,
+    messageRecord: 2
 }
 Page({
 
@@ -10,7 +11,8 @@ Page({
     data: {
         loginName: "",
         listMenu: [
-            { name: "通话记录", icon: "/image/callrecord.png", type: 1 }
+            { name: "通话记录", icon: "/image/callrecord.png", type: 1 },
+            { name: "消息记录", icon: "/image/workflow.png", type: 2 }
         ]
     },
 
@@ -30,6 +32,11 @@ Page({
             case itemType.map:
                 wx.navigateTo({
                     url: '/pages/callrecord/callrecord',
+                })
+                break;
+            case itemType.messageRecord:
+                wx.navigateTo({
+                    url: '/pages/messgaerecord/messgaerecord',
                 })
                 break;
         }

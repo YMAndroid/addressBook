@@ -36,6 +36,8 @@ const liveListApi = "/interface/livelist.php";
 const getTerminalLocationApi = "/api/info/list/udntop";
 //获取终端轨迹
 const getTerminalTrackApi = "/api/info/list/udntime";
+//消息记录
+const messageRecordApi = "/api/msg/list";
 module.exports = {
     baseUrl,
     attrUrl,
@@ -56,5 +58,6 @@ module.exports = {
     port2,
     webRtc,
     getTerminalLocationApi,
-    getTerminalTrackApi
+    getTerminalTrackApi,
+    messageRecordApi
 }

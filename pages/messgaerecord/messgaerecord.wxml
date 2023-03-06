@@ -1,0 +1,28 @@
+<!--pages/messgaerecord/messgaerecord.wxml-->
+<view class="group">
+    <block wx:for="{{messageRecordList}}">
+        <view class="group-item" data-index="{{index}}" bindtap="itemClick" hover-class='wsui-btn__hover_list'>
+            <view class="content">
+            <view>
+                <image class="group-item-image" src="/image/bottombar_my_selected.png"></image>
+            </view>
+                
+                <view class="item-content">
+                    <view class="item-content-sub">
+                        <view class="group-item-content-title">
+                            <text>{{item.sender == loginName ? item.receiver : item.sender}}</text>
+                        </view>
+                        <view class="group-item-content-desc">
+                            {{item.createTime}}
+                        </view>
+                    </view>
+
+                    <view class="group-item-content-desc">
+                        <text>{{item.content}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+
+</view>

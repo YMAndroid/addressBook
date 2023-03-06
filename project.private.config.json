@@ -3,7 +3,7 @@
     "projectname": "addressBook",
     "setting": {
         "compileHotReLoad": true,
-        "urlCheck": true
+        "urlCheck": false
     },
     "libVersion": "2.30.0"
 }
