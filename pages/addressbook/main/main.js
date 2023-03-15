@@ -8,6 +8,7 @@ let tabType = {
     member: 3,
     friend: 4
 }
+let longtap = 0;
 //通讯录主页面
 Page({
 
@@ -28,15 +29,9 @@ Page({
         curChooseGroupIndex: 0,
     },
 
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad(options) {
-        this.getFriendList();
-    },
-
     onShow() {
         this.getGroupList();
+        this.getFriendList();
     },
 
     getGroupList() {
@@ -61,6 +56,27 @@ Page({
         });
     },
     getFriendList() {
+        let data1 = {
+            userNum: wx.getStorageSync('userInfo').loginName
+        }
+        let obj = {
+            method: "GET",
+            showLoading: true,
+            url: constants.getFriendsApi,
+            message: "加载中...",
+            data: data1
+        }
+        httpUtils.request(obj).then(res => {
+            console.log("获取好友列表：", res);
+            if (res.data.code == 0) {
+                this.setData({
+                    friendList: res.data.rows,
+                })
+                this.initList();
+            }
+        }).catch(err => {
+            console.log('ERROR')
+        });
     },
     tabClick(e) {
         console.log("tabClick:", e);
@@ -80,10 +96,6 @@ Page({
                 url = "/pages/addressbook/goodfriend/goodfriend"
                 break;
         }
-        if (type == tabType.friend) {
-            ui.showToast("该功能暂未实现！")
-            return;
-        }
         wx.navigateTo({
             url: url,
         })
@@ -99,6 +111,44 @@ Page({
         this.setData({
             curChooseGroupIndex: e.detail.idx
         })
+    },
+
+    bindlongtap(e) {
+        console.log("长按：", e)
+        longtap = 1;
+        console.log("长按事件:", e);
+        let that = this;
+        wx.showModal({
+            title: '删除好友',
+            content: `确认删除 ${e.currentTarget.dataset.groupobj.name} ?`,
+            success: res => {
+                if (res.confirm) {
+                    let obj = {
+                        method: "POST",
+                        showLoading: true,
+                        url: `${constants.deleteFriend}?id=${e.currentTarget.dataset.groupobj.id}`,
+                        message: "删除中...",
+                    }
+                    httpUtils.request(obj).then(res => {
+                        if (res.data.code == 0) {
+                            ui.showToast("删除成功！")
+                            this.getFriendList();
+                        }
+                    }).catch(err => {
+                        console.log('ERROR')
+                    });
+                }
+            }
+        })
+    },
+
+    jumpToDetail(e) {
+        if (longtap != 1) {
+            wx.navigateTo({
+                url: `/pages/addressbook/memberdetail/memberdetail?userInfo=${JSON.stringify(e.currentTarget.dataset.groupobj)}&isFriend=true`,
+            })
+        }
+        longtap = 0;
     },
     /**
    * 用户点击右上角分享

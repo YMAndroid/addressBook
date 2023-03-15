@@ -1,2 +1,37 @@
 <!--pages/addressbook/goodfriend/goodfriend.wxml-->
-<text>pages/addressbook/goodfriend/goodfriend.wxml</text>
+<view class="weui-search-bar" id="searchBar">
+    <form class="weui-search-bar__form">
+        <view class="weui-search-bar__box weui-menu__flex">
+            <text class="iconfont icon-search weui-icon-search"></text>
+            <input type="text" class="weui-search-bar__input" id="searchInput" name="searchInput" value="{{searchText}}" bindinput="searchTextInput" bindconfirm="searchSubmit" placeholder="{{placeholder}}" focus="{{searchFocus}}" confirm-type="search" />
+            <text class="iconfont icon-round_close_light weui-icon-clear" bindtap="searchClearTap"></text>
+        </view>
+        <label wx:if="{{!searchFocus}}" class="weui-search-bar__label weui-menu__flex" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);" bindtap="searchTextTap">
+            <text class="iconfont icon-search weui-icon-search"></text>
+            <text class="span">{{placeholder}}</text>
+        </label>
+    </form>
+    <view wx:if="{{searchFocus}}" class="weui-search-bar__form weui-search-bar__cancel-btn weui-menu__flex" bindtap="searchTextTap">取消</view>
+</view>
+<view style="height:{{searchHeight}}px;"></view>
+
+<block wx:if="{{friendListSearch.length > 0}}">
+    <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_small-appmsg">
+            <view class="weui-cells">
+                <view wx:for="{{friendListSearch}}" wx:key="id" class="weui-cell weui-cell_access weui-search_r sercher-item" data-item='{{item}}' bindtap="itemClickEvent">
+                    <view class="weui-cell__hd weui-cell_primary weui-menu__flex">
+                        <image src="{{item.photo}}" alt="{{item.name}}" class="bg_light-grey"></image>
+                    </view>
+                    <view class="weui-cell__bd weui-cell_primary">
+                        <view>{{item.name}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+
+<block wx:else>
+    <alphabet-order-list id="alphabet_order_list" source="{{friendsList}}" groupKey="HZPY" imageKey="photo" textKey="name" phoneKey="phone" checkType="{{checkType}}" searchHeight="{{searchHeight}}" catchitemtap="itemClickEvent" />
+</block>

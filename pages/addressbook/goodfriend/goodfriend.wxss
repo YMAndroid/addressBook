@@ -1,1 +1,62 @@
 /* pages/addressbook/goodfriend/goodfriend.wxss */
+/* pages/addressbook/member/member.wxss */
+@import "/lib/searchbar.wxss";
+
+page {
+    overflow: hidden;
+    background-color: #F5F5F5;
+    /*如果有搜索栏，并且搜索栏为fixed时，需设置此CSS*/
+}
+
+.weui-search_r .weui-cell__hd {
+    width: 100rpx;
+    height: 100rpx;
+    margin-right: 30rpx;
+
+}
+
+.weui-search_r .weui-cell__hd image {
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+}
+
+.weui-search_r .weui-cell__bd {
+    font-size: 32rpx;
+    line-height: 50rpx;
+    flex: 1;
+    min-height: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bottom-opt {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    background-color: #1597f2;
+    border-radius: 50%;
+}
+
+.bottom-opt-image {
+    width: 30px;
+    height: 30px;
+}
+
+.btn {
+    background: #1597f2;
+    color: white;
+}
+
+.sercher-item{
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(227, 231, 231, 0.5)
+}

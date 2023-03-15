@@ -95,6 +95,7 @@ Page({
                             mobile: res.data.data[i].phonenumber,
                             photo: '/image/user_icon.png',//res.data.data[i].avatar,
                             checked: false,
+                            userId: res.data.data[i].userId
                         });
                     }
                 }
@@ -449,8 +450,16 @@ Page({
 
     //点击事件
     itemClick: function (item) {
+        console.log("item:===>",item);
+        let tempObj = {
+            id: item.userId,
+            phone: item.mobile,
+            userNum: wx.getStorageSync('userInfo').loginName,
+            name: item.name,
+            num: item.id,
+        }
         wx.navigateTo({
-            url: `/pages/addressbook/memberdetail/memberdetail?userInfo=${JSON.stringify(item)}`,
+            url: `/pages/addressbook/memberdetail/memberdetail?userInfo=${JSON.stringify(tempObj)}`,
         })
     },
 

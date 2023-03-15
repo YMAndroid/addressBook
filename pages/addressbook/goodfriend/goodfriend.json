@@ -1,3 +1,6 @@
 {
-    "usingComponents": {}
+    "navigationBarTitleText": "好友",
+    "usingComponents": {
+        "alphabet-order-list": "/components/alphabet-order-list/alphabet-order-list"
+      }
 }

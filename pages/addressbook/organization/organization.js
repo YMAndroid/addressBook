@@ -125,9 +125,11 @@ Page({
         console.log("itemClickEvent====", e)
         console.log("viewUserInfo:", e.detail.item)
         let temp = {
-            id: e.detail.item.num,
+            id: e.detail.item.id,
             name: e.detail.item.nickname,
-            mobile: e.detail.item.mobilenum,
+            phone: e.detail.item.mobilenum,
+            num: e.detail.item.num,
+            userNum: wx.getStorageSync('userInfo').loginName
         }
         wx.navigateTo({
             url: '/pages/addressbook/memberdetail/memberdetail?userInfo=' + JSON.stringify(temp)

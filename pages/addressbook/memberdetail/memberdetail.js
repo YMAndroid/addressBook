@@ -1,6 +1,8 @@
 // pages/user/user.js
 var _app = getApp();
 const constants = require('../../../utils/constants')
+const httpUtils = require('../../../utils/httpUtils')
+const ui = require('../../../utils/ui')
 const optType = {
     msg: 1,
     voice: 2,
@@ -28,6 +30,7 @@ Page({
             { name: "好友", icon: "/image/add_firends.png", type: optType.firends }
         ],
         webViewUrl: "",
+        isFriend: false,
     },
     /**
      * 生命周期函数--监听页面加载
@@ -35,7 +38,8 @@ Page({
     onLoad: function (options) {
         console.log("options:", options)
         this.setData({
-            userInfo: JSON.parse(options.userInfo)
+            userInfo: JSON.parse(options.userInfo),
+            isFriend: options.isFriend ? options.isFriend : false
         })
     },
     copyInfo() {
@@ -68,8 +72,29 @@ Page({
             case optType.phone:
                 break;
             case optType.firends:
+                if(this.data.isFriend){
+                    ui.showToast("已添加好友")
+                    return;
+                }
+                this.addFriends();
                 break;
         }
+    },
+
+    addFriends(){
+        let obj = {
+            method: "POST",
+            showLoading: true,
+            url: constants.addFriend,
+            data: this.data.userInfo
+        }
+        httpUtils.request(obj).then(res => {
+            if (res.data.code == 0) {
+                ui.showToast('添加成功!');
+            }
+        }).catch(err => {
+            console.log('ERROR')
+        });
     },
 
     /**

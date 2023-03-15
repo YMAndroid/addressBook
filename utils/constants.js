@@ -38,6 +38,14 @@ const getTerminalLocationApi = "/api/info/list/udntop";
 const getTerminalTrackApi = "/api/info/list/udntime";
 //消息记录
 const messageRecordApi = "/api/msg/list";
+//获取好友列表
+const getFriendsApi ="/api/friends/list";
+//添加好友列表
+const addFridendsListApi = "/api/friends/addList";
+//添加好友
+const addFriend = "/api/friends/add";
+//删除好友
+const deleteFriend = "/api/friends/delete";
 module.exports = {
     baseUrl,
     attrUrl,
@@ -59,5 +67,9 @@ module.exports = {
     webRtc,
     getTerminalLocationApi,
     getTerminalTrackApi,
-    messageRecordApi
+    messageRecordApi,
+    getFriendsApi,
+    addFridendsListApi,
+    addFriend,
+    deleteFriend
 }

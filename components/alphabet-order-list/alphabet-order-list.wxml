@@ -16,7 +16,7 @@
                             <view class='tag-item' data-item='{{item}}'>
                                 <!-- bindtap='_itemtap' -->
                                 <checkbox value="{{item[checkValue]}}" checked="{{item[checkStatus]}}" />
-                                <image wx:if='{{imageKey}}' class='item-image' style='{{imageStyle}}' src='{{item[imageKey]}}'></image>
+                                <image wx:if='{{imageKey}}' class='item-image' style='{{imageStyle}}' src="{{item[imageKey] ? item[imageKey] : '/image/user_icon.png'}}"></image>
                                 <view id="{{item[textKey]}}" class='item-text' style='{{textStyle}}'>
                                     <view>{{item[textKey]}}</view>
                                 </view>
@@ -38,7 +38,7 @@
                             <view class='tag-item' data-item='{{item}}'>
                                 <!-- bindtap='_itemtap' -->
                                 <radio value="{{item[checkValue]}}" checked="{{item[checkStatus]}}" />
-                                <image wx:if='{{imageKey}}' class='item-image' style='{{imageStyle}}' src='{{item[imageKey]}}'></image>
+                                <image wx:if='{{imageKey}}' class='item-image' style='{{imageStyle}}' src="{{item[imageKey] ? item[imageKey] : '/image/user_icon.png'}}"></image>
                                 <view class='item-text' style='{{textStyle}}'>
                                     <view>{{item[textKey]}}</view>
                                 </view>
@@ -56,7 +56,7 @@
                 <view id='{{pitem.tag}}' class='letter-tag' style='{{tagStyle}}'>{{pitem.tag == 'PoundSign' ? '#' : pitem.tag}}</view>
                 <block wx:for='{{pitem.data}}' wx:key wx:for-item='item' wx:for-index='j'>
                     <view class='tag-item' data-item='{{item}}' bindtap='_itemtap'>
-                        <image wx:if='{{imageKey}}' class='item-image' style='{{imageStyle}}' src='{{item[imageKey]}}'></image>
+                        <image wx:if='{{imageKey}}' class='item-image' style='{{imageStyle}}'src="{{item[imageKey] ? item[imageKey] : '/image/user_icon.png'}}"></image>
                         <view class='item-text' style='{{textStyle}}'>
                             <view>{{item[textKey]}}</view>
                         </view>

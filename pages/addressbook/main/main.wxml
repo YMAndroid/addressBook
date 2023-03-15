@@ -11,5 +11,15 @@
 
     <view class="content">
         <group groupList="{{groupList}}" bindmyevent="myevent" bindcurindex="curSelectIndex"></group>
+        <block wx:for="{{friendList}}" wx:key="id">
+        <view class="group-item" data-index="{{index}}" bindtap="itemClick"> 
+            <image class="group-item-image" src="/image/bottombar_my_selected.png"></image>
+                <view class="group-item-content" data-groupObj="{{item}}" bindlongtap="bindlongtap" bindtap="jumpToDetail">
+                    <view class="group-item-content-title">
+                        <text>{{item.name}}</text>
+                    </view>
+                </view>
+        </view>
+    </block>
     </view>
 </view>
