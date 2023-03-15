@@ -1,5 +1,6 @@
 // components/alphabet-order-list/alphabet-order-list.js
 // 通讯录组件，来源博主：https://blog.csdn.net/Honiler/article/details/82929111
+let longtap = 0;
 Component({
 
     //可设置属性
@@ -219,7 +220,17 @@ Component({
 
         _itemtap: function (e) {
             console.log("___________",e)
-            this.triggerEvent('itemtap', { 'item': e.currentTarget.dataset.item }, {})
+            if(longtap != 1){
+                this.triggerEvent('itemtap', { 'item': e.currentTarget.dataset.item, isLongTap: false }, {})
+            }
+            longtap = 0;
+        },
+
+        _itemlongtap: function(e){
+            console.log("_itemlongtap===>")
+            longtap = 1;
+            this.triggerEvent('itemtap', { 'item': e.currentTarget.dataset.item, isLongTap: true }, {})
+            longtap = 0;
         },
 
         _itemtap_call: function (e) {

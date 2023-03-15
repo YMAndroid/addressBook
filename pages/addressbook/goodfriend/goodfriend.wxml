@@ -33,5 +33,5 @@
 </block>
 
 <block wx:else>
-    <alphabet-order-list id="alphabet_order_list" source="{{friendsList}}" groupKey="HZPY" imageKey="photo" textKey="name" phoneKey="phone" checkType="{{checkType}}" searchHeight="{{searchHeight}}" catchitemtap="itemClickEvent" />
+    <alphabet-order-list id="alphabet_order_list" source="{{friendsList}}" groupKey="HZPY" imageKey="photo" textKey="name" phoneKey="phone" checkType="{{checkType}}" searchHeight="{{searchHeight}}" catchitemtap="itemClickEvent"/>
 </block>

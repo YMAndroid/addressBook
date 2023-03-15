@@ -80,33 +80,22 @@ Page({
     },
 
     //删除好友
-    deleteMember() {
-        let that = this;
+    deleteFriend(item) {
         wx.showModal({
-            title: '删除组员',
-            content: "确认删除所选组员",
-            success: function (res) {
-                console.log("dialog res =>", res);
+            title: '删除好友',
+            content: `确认删除好友 ${item.name}?`,
+            success: res => {
                 if (res.confirm) {
-                    let data = {
-                        groupid: that.data.groupId,
-                        groupList: that.data.chooseUserList
-                    }
                     let obj = {
                         method: "POST",
                         showLoading: true,
-                        url: constants.deleteGrouoMemberApi,
+                        url: `${constants.deleteFriend}?id=${item.id}`,
                         message: "删除中...",
-                        data: data
                     }
                     httpUtils.request(obj).then(res => {
                         if (res.data.code == 0) {
-                            ui.showToast(res.data.msg)
-                            that.setData({
-                                checkType: checkType.other,
-                                chooseUserList: []
-                            })
-                            that.getMemberList();
+                            ui.showToast("删除成功！")
+                            this.getFriendsList();
                         }
                     }).catch(err => {
                         console.log('ERROR')
@@ -251,11 +240,16 @@ Page({
 
     //点击事件
     itemClickEvent: function (e) {
-        //console.log('itemClickEvent e', e); 
+        console.log('itemClickEvent e====>', e);
         var item = e.detail.item ? e.detail.item : e.currentTarget.dataset.item;
-        this.itemClick(item);
+        if (!e.detail.isLongTap) {
+            this.itemClick(item);
+        } else {
+            //长按删除
+            this.deleteFriend(item);
+        }
     },
-    
+
     //点击事件
     itemClick: function (item) {
         wx.navigateTo({
