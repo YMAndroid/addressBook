@@ -230,7 +230,6 @@ Component({
             console.log("_itemlongtap===>")
             longtap = 1;
             this.triggerEvent('itemtap', { 'item': e.currentTarget.dataset.item, isLongTap: true }, {})
-            longtap = 0;
         },
 
         _itemtap_call: function (e) {
