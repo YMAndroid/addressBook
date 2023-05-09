@@ -1,0 +1,16 @@
+<!--pages/me/setting/setting.wxml-->
+<view class="me-page">
+    <view class="list-wrapper">
+        <view class="alllists">
+            <block wx:for="{{listMenu}}">
+                <view class="content-item" bindtap="itemClick" data-type="{{item.type}}">
+                    <view class="item-left">
+                        <text>{{item.name}}</text>
+                    </view>
+
+                    <view>{{item.value}}</view>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

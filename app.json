@@ -12,6 +12,7 @@
         "pages/callrecord/callrecord",
         "pages/callrecord/callrecordvedio/callrecordvedio",
         "pages/me/me",
+        "pages/me/setting/setting",
         "pages/live/live",
         "pages/live/liveh5/liveh5",
         "pages/map/map",
